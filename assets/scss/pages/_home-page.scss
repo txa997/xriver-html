@@ -1,0 +1,18 @@
+/* 
+    home-css-start
+*/
+
+
+.sk-home-2 {
+    background-color: var(--sk-clr-white-1);
+
+    @media #{$over,$xxxl,$xxl} {
+        &::-webkit-scrollbar-thumb {
+            background: var(--sk-clr-pr-2);
+        }
+    }
+}
+
+/* 
+    home-css-end
+*/

@@ -1,0 +1,54 @@
+/* 
+    typography-start
+*/
+
+.xr-p-1 {
+    font-family: var(--xr-font-1);
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    line-height: 1.555;
+    margin-bottom: 0;
+}
+
+.xr-h-1 {
+    font-family: var(--xr-font-2);
+    font-weight: 500;
+    color: #000;
+    line-height: 1.272;
+    margin-bottom: 0;
+}
+
+
+.sk-sec-title-1 {
+    font-family: var(--sk-font-2);
+    color: #fff;
+    font-weight: 600;
+    font-size: 46px;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+    line-height: 1.086;
+
+
+    @media #{$lg} {
+        font-size: 44px;
+    }
+
+    @media #{$md} {
+        font-size: 38px;
+    }
+
+    @media #{$xs} {
+        font-size: 32px;
+    }
+
+    @media #{$sm} {
+        font-size: 36px;
+    }
+}
+
+
+/* 
+    typography-end
+*/
+
