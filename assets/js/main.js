@@ -810,83 +810,32 @@ wa_progress_ani.forEach((elm) => {
 
 
 /* 
-    marquee-right
+    marquee-activation
 */
 
-$('.wa_marquee_right').marquee({
-	speed: 50,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'right',
-	duplicated: true,
-	pauseOnHover: true,
-})
+$('.wa_marquee').each(function () {
 
-/* 
-    marquee-left
-*/
+	let $this = $(this);
 
-$('.wa_marquee_left').marquee({
-	speed: 50,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'left',
-	duplicated: true,
-	pauseOnHover: true,
-})
+	let speed = $this.data('speed') || 20;
+	let direction = $this.data('direction') || 'left';
+	let pauseOnHover = $this.data('pause');
 
-$('.wa_marquee_right_v2').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'right',
-	duplicated: true,
-	pauseOnHover: true,
-})
+	if (pauseOnHover === undefined) {
+		pauseOnHover = false;
+	}
 
-/* 
-    marquee-left
-*/
+	$this.marquee({
+		speed: speed,
+		gap: 0,
+		delayBeforeStart: 0,
+		startVisible: true,
+		direction: direction,
+		duplicated: true,
+		pauseOnHover: pauseOnHover,
+	});
 
-$('.wa_marquee_left_v2').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'left',
-	duplicated: true,
-	pauseOnHover: true,
-})
-
-/* 
-    marquee-left-nopause
-*/
-$('.wa_marquee_left_nopause').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'left',
-	duplicated: true,
-	pauseOnHover: false,
-})
-
-
-/* 
-    marquee-right-nopause
-*/
-$('.wa_marquee_right_nopause').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'right',
-	duplicated: true,
-	pauseOnHover: false,
-})
+});
 
 /* 
 	marquee-down-top 
