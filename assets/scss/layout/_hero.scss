@@ -75,7 +75,7 @@
             border-radius: 50%;
             // background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #FD3F00 25%, #FDAD00 50%, #3859FE 75%, #000000 100%);
             background: radial-gradient(50% 50% at 50% 50%, #000000 38.46%, #FD3F00 55.29%, #FDAD00 70.19%, #3859FE 83.65%, #000000 100%);
-            animation: xr-hero-1-circle-kf 7s linear infinite;
+            animation: xr-hero-1-circle-kf 5s linear infinite;
             filter: blur(20px);
         }
     }
@@ -196,7 +196,7 @@
             transition: var(--xr-cube-1);
 
             i {
-                transition: var(--xr-cube-1);
+                transition: 1s;
             }
 
             &:is(.active) {
@@ -204,6 +204,7 @@
                 color: var(--xr-clr-pr-1);
                 i {
                     color: #fff;
+                    transform: rotate(360deg);
                 }
             }
         }
@@ -325,7 +326,7 @@
         opacity: 1;
     }
     100% {
-        transform: scale(8);
+        transform: scale(6);
         opacity: 0;
     }
 }

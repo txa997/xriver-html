@@ -3248,7 +3248,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 1100px;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, #000000 38.46%, #FD3F00 55.29%, #FDAD00 70.19%, #3859FE 83.65%, #000000 100%);
-  animation: xr-hero-1-circle-kf 7s linear infinite;
+  animation: xr-hero-1-circle-kf 5s linear infinite;
   filter: blur(20px);
 }
 .xr-hero-1-bg-line {
@@ -3355,7 +3355,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   transition: var(--xr-cube-1);
 }
 .xr-hero-1-features-list li i {
-  transition: var(--xr-cube-1);
+  transition: 1s;
 }
 .xr-hero-1-features-list li:is(.active) {
   opacity: 1;
@@ -3363,6 +3363,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .xr-hero-1-features-list li:is(.active) i {
   color: #fff;
+  transform: rotate(360deg);
 }
 .xr-hero-1-circle-btn {
   width: 100px;
@@ -3487,7 +3488,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     opacity: 1;
   }
   100% {
-    transform: scale(8);
+    transform: scale(6);
     opacity: 0;
   }
 }

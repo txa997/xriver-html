@@ -187,239 +187,7 @@ function afterPreloader() {
 	if (getComputedStyle(document.body).direction !== "rtl") {
 
 		
-		// section-title-animation-1
-		document.querySelectorAll(".wa_title_spilt_1").forEach((atEl) => {
-			const atSplit = new SplitText(atEl, {
-				type: "words,chars",
-				wordsClass: "word",
-				charsClass: "char"
-			});
-
-			let atDuration = parseFloat(atEl.getAttribute("data-speed")) || .7;
-			let atDelay = parseFloat(atEl.getAttribute("data-delay")) || 0;
-
-			if (window.innerWidth <= 768) {
-				atDuration = atDuration * 0.3; 
-			}
-
-			gsap.set(atSplit.words, {
-				willChange: "transform",
-				perspective: 1000,
-				transformStyle: "preserve-3d"
-			});
-
-			gsap.set(atSplit.chars, {
-				willChange: "transform",
-				opacity: 0,
-				rotateX: -80,
-				transformOrigin: "center center -10px"
-			});
-
-			gsap.set(atEl, {
-				perspective: 1000,
-				transformStyle: "preserve-3d"
-			});
-
-			gsap.to(atSplit.chars, {
-				scrollTrigger: {
-					trigger: atEl,
-					start: "top 80%",
-					toggleActions: 'play none none reverse',
-				},
-				opacity: 1,
-				rotateX: 0,
-				duration: atDuration,
-				delay: atDelay,
-				ease: "ease1",
-				stagger: {
-					each: 0.05,
-					from: "center",
-					grid: "auto",
-				},
-			});
-		});
-
-
-		document.querySelectorAll(".wa_split_2").forEach((atEl) => {
-			const atSplit = new SplitText(atEl, {
-				type: "words,chars",
-				wordsClass: "word",
-				charsClass: "char"
-			});
-
-			let atDuration = parseFloat(atEl.getAttribute("data-speed")) || 1;
-			let atDelay = parseFloat(atEl.getAttribute("data-delay")) || 0;
-
-			if (window.innerWidth <= 768) {
-				atDuration = atDuration * 0.3; 
-			}
-
-			gsap.set(atSplit.words, {
-				willChange: "transform",
-				perspective: 1000,
-				transformStyle: "preserve-3d"
-			});
-
-			gsap.set(atSplit.chars, {
-				willChange: "transform",
-				opacity: 0,
-				yPercent: 100,
-				transformOrigin: "center center -10px"
-			});
-
-			gsap.set(atEl, {
-				perspective: 1000,
-				transformStyle: "preserve-3d"
-			});
-
-			gsap.to(atSplit.chars, {
-				scrollTrigger: {
-					trigger: atEl,
-					start: "top 80%",
-				},
-				opacity: 1,
-				yPercent: 0,
-				duration: atDuration,
-				delay: atDelay,
-				ease: "power3.out",
-				stagger: {
-					each: 0.05,
-					from: "center",
-					grid: "auto",
-				},
-			});
-		});
-
-		document.querySelectorAll(".wa_split_3").forEach((atEl) => {
-			const atSplit3 = new SplitText(atEl, {
-				type: "words,chars",
-				wordsClass: "word",
-				charsClass: "char"
-			});
-
-			let atDuration = parseFloat(atEl.getAttribute("data-speed")) || 1;
-			let atDelay = parseFloat(atEl.getAttribute("data-delay")) || 0;
-
-			if (window.innerWidth <= 768) {
-				atDuration = atDuration * 0.3; 
-			}
-
-
-			gsap.set(atSplit3.chars, {
-				opacity: 0,
-			});
-
-
-			gsap.to(atSplit3.chars, {
-				scrollTrigger: {
-					trigger: atEl,
-					start: "top 80%",
-				},
-				opacity: 1,
-				duration: .3,
-				delay: atDelay,
-				ease: "power3.out",
-				stagger: 0.05,
-			});
-		});
-
-		if($('.wa_split_left').length) {
-			var wa_split_left = $(".wa_split_left");
-
-			if(wa_split_left.length == 0) return; gsap.registerPlugin(SplitText); wa_split_left.each(function(index, el) {
-			
-				el.split = new SplitText(el, { 
-					type: "lines,words,chars",
-					linesClass: "split-line"
-				});
-			
-				if( $(el).hasClass('wa_split_left') ){
-					gsap.set(el.split.chars, {
-						x: -680,
-					});
-				}
-			
-				el.anim = gsap.to(el.split.chars, {
-					scrollTrigger: {
-						trigger: el,
-						start: "top 90%",
-						toggleActions: 'play none none reverse',
-						markers: false,
-					},
-			
-					x: 0,
-					opacity: 1,
-					ease: "ease1",
-					duration: .4,
-					stagger: -0.1,
-				});
-			
-			});
-		}
-
-		document.querySelectorAll(".wa_split_4").forEach((atEl) => {
-			const atSplit3 = new SplitText(atEl, {
-				type: "words,chars",
-				wordsClass: "word",
-				charsClass: "char"
-			});
-
-			let atDuration = parseFloat(atEl.getAttribute("data-speed")) || 1;
-			let atDelay = parseFloat(atEl.getAttribute("data-delay")) || 0;
-
-			if (window.innerWidth <= 768) {
-				atDuration = atDuration * 0.3; 
-			}
-
-
-			gsap.set(atSplit3.words, {
-				opacity: 1,
-				yPercent: 100,
-			});
-
-
-			gsap.to(atSplit3.words, {
-				scrollTrigger: {
-					trigger: atEl,
-					start: "top 80%",
-				},
-				yPercent: 0,
-				opacity: 1,
-				duration: .3,
-				delay: atDelay,
-				ease: "power3.out",
-				stagger: 0.1,
-			});
-		});
-
-
-		const wa_bg_position = new SplitText(".wa_split_clr_1", { type: "lines" });
-		wa_bg_position.lines.forEach((target) => {
-			gsap.to(target, {
-				backgroundPositionX: 0,
-				duration: 3,
-				scrollTrigger: {
-					trigger: target,
-					scrub: false,
-					start: 'top 85%',
-					end: "bottom center"
-				}
-			});
-		});
-
-		const wa_bg_position2 = new SplitText(".wa_split_clr_2", { type: "lines" });
-		wa_bg_position2.lines.forEach((target) => {
-			gsap.to(target, {
-				backgroundPositionX: 0,
-				duration: 3,
-				scrollTrigger: {
-					trigger: target,
-					scrub: false,
-					start: 'top 85%',
-					end: "bottom center"
-				}
-			});
-		});
+		
 	}	
 
 
@@ -471,6 +239,24 @@ function afterPageLoad() {
 		});
 		wow.init();
 	};
+
+
+
+
+	if($(".xr-hero-1-features-list").length) {
+		const items = document.querySelectorAll(".xr-hero-1-features-list li");
+		let current = 0;
+	
+		setInterval(() => {
+			items[current].classList.remove("active");
+			current++;
+			if (current >= items.length) {
+				current = 0;
+			}
+			items[current].classList.add("active");
+		}, 3000);
+	}
+
 
 /* 
 	after-page-load-start
