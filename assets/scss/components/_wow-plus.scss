@@ -17,25 +17,21 @@
 @keyframes fadeInUp2 {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(30px);
-    -ms-transform: translateY(30px);
-    transform: translateY(30px);
-    filter: blur(3px);
+    perspective: 2000px;
+    transform: rotateX(83deg) translateY(82px);
   }
 
   100% {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-    filter: blur(0px);
+    perspective: 2000px;
+    transform: rotateX(0deg) translateY(0px);
   }
 }
 
 .fadeInUp2 {
   -webkit-animation-name: fadeInUp2;
   animation-name: fadeInUp2;
-  animation-duration: 400ms;
-  animation-timing-function: var(--sk-cube-1);
+  animation-duration: 600ms;
+  animation-timing-function: var(--xr-cube-1);
 }
 
 @keyframes fadeInDown2 {

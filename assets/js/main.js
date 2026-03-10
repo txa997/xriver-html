@@ -13,8 +13,8 @@
 	lenis-smooth-scroll-activation
 */
 const lenis = new Lenis({
-	duration: 1, 
-	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+	duration: 1.15,
+	easing: (t) => 1 - Math.pow(1 - t, 4),
 	direction: 'vertical', 
 	smooth: true, 
 	smoothTouch: false, 
@@ -185,7 +185,194 @@ function afterPreloader() {
 		only-LTR-direction
 	*/
 	if (getComputedStyle(document.body).direction !== "rtl") {
+		// title-animation
+		function wa_split_text() {
 
+			var wa_st = $(".wa-split-text");
+			if (wa_st.length === 0) return;
+
+			gsap.registerPlugin(SplitText, ScrollTrigger);
+
+			wa_st.each(function (index, wa_el) {
+
+				var wa_els = wa_el;
+
+				const wa_split = new SplitText(wa_els, {
+					type: "lines, words, chars",
+					lineThreshold: 0.5,
+					linesClass: "split-line",
+				});
+
+				var split_type_set = wa_split.chars;
+
+				gsap.set(wa_els, { perspective: 400 });
+
+				var settings = {
+					scrollTrigger: {
+						trigger: wa_els,
+						toggleActions: "play none none none",
+						start: "top 86%",
+						once: true,
+					},
+					duration: 0.35,
+					stagger: 0.02,
+					ease: "expo.out",
+				};
+
+				if ($(wa_el).hasClass("split-in-fade")) {
+					settings.opacity = 0;
+				}
+				if ($(wa_el).hasClass("split-in-right")) {
+					settings.opacity = 0;
+					settings.x = 50;
+				}
+				if ($(wa_el).hasClass("split-in-left")) {
+					settings.opacity = 0;
+					settings.x = -50;
+				}
+				if ($(wa_el).hasClass("split-in-up")) {
+					settings.opacity = 0;
+					settings.y = 80;
+				}
+				if ($(wa_el).hasClass("split-in-down")) {
+					settings.opacity = 0;
+					settings.y = -80;
+				}
+				if ($(wa_el).hasClass("split-in-rotate")) {
+					settings.opacity = 0;
+					settings.rotateX = 50;
+				}
+				if ($(wa_el).hasClass("split-in-scale")) {
+					settings.opacity = 0;
+					settings.scale = 0.5;
+				}
+
+				if ($(wa_el).hasClass("split-line-up")) {
+
+					wa_split.split({ type: "words" });
+					split_type_set = wa_split.words;
+
+					$(split_type_set).each(function (i, elw) {
+						gsap.from(elw, {
+							autoAlpha: 0,
+							duration: 1,
+							transform: "rotateX(80deg) translateY(80px)",
+							delay: 0.25 + i * 0.065,
+							ease: "expo.out",
+							transformOrigin: "center bottom",
+							scrollTrigger: {
+								trigger: wa_el,
+								start: "top 86%",
+								toggleActions: "play none none none",
+							},
+						});
+					});
+
+				}
+
+				if ($(wa_el).hasClass("split-up")) {
+
+					wa_split.split({ type: "words" });
+					split_type_set = wa_split.words;
+
+					$(split_type_set).each(function (i, elw) {
+						gsap.from(elw, {
+							opacity: 0,
+							duration: 0.65,
+							y: 40,
+							rotate: 10,
+							transformOrigin: "bottom right",
+							filter: "blur(5px)",
+							delay: 0.25 + i * 0.065,
+							ease: "expo.out",
+							scrollTrigger: {
+								trigger: wa_el,
+								start: "top 86%",
+								toggleActions: "play none none none",
+							},
+						});
+					});
+
+				}
+				else if ($(wa_el).hasClass("split-words-scale")) {
+					let atDelay = parseFloat(wa_el.getAttribute("data-delay")) || 0;
+
+					wa_split.split({ type: "words" });
+					split_type_set = wa_split.words;
+
+					gsap.set(split_type_set, {
+						opacity: 0,
+						scale: (i) => (i % 2 === 0 ? 0 : 2),
+						force3D: true,
+					});
+
+					gsap.to(split_type_set, {
+						scrollTrigger: {
+							trigger: wa_el,
+							toggleActions: "play reverse play reverse",
+							start: "top 86%",
+						},
+						rotateX: 0,
+						scale: 1,
+						opacity: 1,
+						stagger: 0.03,
+						delay: atDelay,
+					});
+
+				}
+				else {
+					var wa_anim = gsap.from(split_type_set, settings);
+
+					if ($(wa_el).hasClass("hover-split-text")) {
+						$(wa_el).on("mouseenter", function () {
+							wa_anim.restart();
+						});
+					}
+				}
+
+			});
+		}
+		wa_split_text();
+
+		/* 
+			hero-4-title-animation
+		*/
+		if($(".wa-split-up-1").length) {
+			var wa_split_up_1 = $(".wa-split-up-1");
+			if(wa_split_up_1.length == 0) return; gsap.registerPlugin(SplitText); wa_split_up_1.each(function(index, el) {
+
+				el.split = new SplitText(el, { 
+					type: "lines,words,chars",
+					linesClass: "split-line",
+				});
+
+				let delayValue = $(el).attr("data-split-delay") || "0s";
+				delayValue = parseFloat(delayValue) || 0; 
+
+				if( $(el).hasClass('wa-split-up-1') ){
+					gsap.set(el.split.chars, {
+						scaleY: 1.5, 
+						rotate: 10,
+						opacity: 0,
+					});
+				}
+
+				el.anim = gsap.to(el.split.chars, {
+					scrollTrigger: {
+						trigger: el,
+						toggleActions: 'play none none reverse',
+					},
+					opacity: 1,
+					scaleY: 1, 
+					rotate: 0,
+					duration: .6,
+					ease: "expo.out",
+					stagger: -0.08,
+					delay: delayValue, 
+				});
+
+			});
+		}
 		
 		
 	}	
@@ -242,7 +429,7 @@ function afterPageLoad() {
 
 
 
-
+	// hero-1-features-list
 	if($(".xr-hero-1-features-list").length) {
 		const items = document.querySelectorAll(".xr-hero-1-features-list li");
 		let current = 0;
@@ -256,6 +443,42 @@ function afterPageLoad() {
 			items[current].classList.add("active");
 		}, 3000);
 	}
+
+	// hero-1-tl-1
+	let hero1tl1 = gsap.timeline()
+	hero1tl1.from(".xr-hero-1-img", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+		delay: 1,
+	})
+	hero1tl1.from(".xr-hero-1-top-disc", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+
+	},"<30%")
+	hero1tl1.from(".xr-hero-1-circle-btn", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+	},"<30%")
+	hero1tl1.from(".xr-hero-1-features-list", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+	},"<30%")
+	hero1tl1.from(".xr-hero-1-author", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+	},"<30%")
+
 
 
 /* 
@@ -327,6 +550,22 @@ $(".xr-header-1-menu-toggle-btn").on("click", function () {
 
 	$(".xr-header-1-menu").toggleClass("show"); 
 });
+
+
+// hero-1-scroll-tl-1
+// let hero1scrollTl1 = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".xr-hero-1-area .xr-line-shape",
+//       start: "top 70%",
+//       scrub: 1,
+//       markers: true,
+//     }
+// })
+// hero1scrollTl1.from(".xr-hero-1-area .xr-line-shape .single-line", {
+//     y: -70,
+// 	stagger: .1,
+//     ease: "expo.out"
+// })
 
 
 
