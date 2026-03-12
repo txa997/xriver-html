@@ -403,12 +403,21 @@
                     position: absolute;
                     bottom: -15px;
                     left: 0;
+
+                    img {
+                        animation: h1partnerLeaf 3s linear infinite;    
+                        animation-delay: 2s;
+                    }
                 }
     
                 .leaf-img-2 {
                     position: absolute;
                     right: 0;
                     bottom: -15px;
+
+                    img {
+                        animation: h1partnerLeaf 3s linear infinite;    
+                    }
                 }
             }
 

@@ -569,6 +569,53 @@ $(".xr-header-1-menu-toggle-btn").on("click", function () {
 
 
 
+
+/* 
+	testimonial-1-slider-active
+*/
+if ($('.xr_t1_main_slider').length) {
+
+	const xr_t1_main_slider = new Swiper('.xr_t1_main_slider', {
+		loop: true,
+		speed: 700,
+		slidesPerView: 1,
+
+		effect: "fade",
+		fadeEffect: { crossFade: true },
+
+
+		navigation: {
+			nextEl: ".xr_t1_next",
+			prevEl: ".xr_t1_prev",
+		},
+
+		autoplay: { delay: 4000 },
+
+		on: {
+			slideChangeTransitionStart: function () {
+			  const previewContainer = document.querySelector(".xr-testimonial-1-slider-preview");
+			  const imgs = previewContainer.querySelectorAll("img");
+		
+			  previewContainer.classList.remove("is_class_fade");
+			  void previewContainer.offsetWidth; 
+			  previewContainer.classList.add("is_class_fade");
+		
+			  const srcs = Array.from(imgs).map((img) => img.getAttribute("src"));
+		
+			  const shuffled = srcs.sort(() => Math.random() - 0.5);
+		
+			  imgs.forEach((img, i) => {
+				img.setAttribute("src", shuffled[i]);
+			  });
+			},
+		  },
+
+
+	});
+  
+}
+  
+
 /* 
 	price-3-toggle-class
 */

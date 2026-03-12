@@ -40,6 +40,24 @@
     perspective: 2000px;
     transform-style: preserve-3d;
 }
+
+
+
+@keyframes h1partnerLeaf {
+    0% {
+        transform-origin: 50% 100%;
+        transform: skewX(-5deg);
+    }
+    50% {
+        transform-origin: 50% 100%;
+        transform: skewX(5deg);
+    }
+    100% {
+        transform-origin: 50% 100%;
+        transform: skewX(-5deg);
+    }
+}
+
 /* 
     elements-end
 */

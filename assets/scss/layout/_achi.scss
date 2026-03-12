@@ -73,9 +73,13 @@
             border-radius: 6px;
             margin-bottom: 12px;
 
-            .wa-fix {
-                margin-bottom: -4px;
+            > .wa-fix {
+        
                 border-radius: 6px;
+
+                .wa-fix {
+                    margin-bottom: -4px;
+                }
             }
         }
     
