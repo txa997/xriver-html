@@ -13,10 +13,38 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         gap: 20px;
+
+        @media #{$xxl} {
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+
+        @media #{$xl} {
+            grid-template-columns: 1fr 1fr 1fr ;
+            width: 100%;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 1fr 1fr ;
+            width: 100%;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr ;
+            width: 100%;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr ;
+            width: 100%;
+        }
     }
     
     &-member {
-    
+        @media #{$xs} {
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .main-img {
             height: 380px;
             border-radius: 12px;
@@ -156,6 +184,80 @@
         
     }
 }
+
+
+.xr-team-1 {
+    &-main-wrap {
+        position: relative;
+        z-index: 1;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            height: auto;
+        }
+
+        .draw-svg {
+            margin-left: 100px;
+            margin-top: 26vh;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
+
+            path {
+                stroke: transparent;
+            }
+        }
+
+        .xr-team-1-wrap {
+            @media #{$over,$xxxl} {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                z-index: 1;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &-big-title {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: -1;
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
+        &-text {
+            font-size: 234px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+
+        }
+    }
+}
+
+
+@media #{$over,$xxxl} {
+    .xr-team-1-height {
+        height: 400vh;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .xr-team-1-pin {
+        position: sticky;
+        top: 0;
+    }
+}
+
+
 /* 
     team-1-end
 */

@@ -551,25 +551,6 @@ $(".xr-header-1-menu-toggle-btn").on("click", function () {
 	$(".xr-header-1-menu").toggleClass("show"); 
 });
 
-
-// hero-1-scroll-tl-1
-// let hero1scrollTl1 = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".xr-hero-1-area .xr-line-shape",
-//       start: "top 70%",
-//       scrub: 1,
-//       markers: true,
-//     }
-// })
-// hero1scrollTl1.from(".xr-hero-1-area .xr-line-shape .single-line", {
-//     y: -70,
-// 	stagger: .1,
-//     ease: "expo.out"
-// })
-
-
-
-
 /* 
 	testimonial-1-slider-active
 */
@@ -617,62 +598,38 @@ if ($('.xr_t1_main_slider').length) {
   
 
 /* 
-	price-3-toggle-class
+	Achievements-1-handshake-video
 */
-if($(".sk-price-3-toggle-btn").length) {
-	$('.sk-price-3-toggle-btn').on('click', function () {
-		$(".sk-price-3-toggle").toggleClass('active');
-		$(".sk-price-3-toggle-btn").toggleClass('active');
-		$('.sk-price-3-card .price-box').toggleClass('active');
-		$('.sk-price-4-card .price-box').toggleClass('active');
+if ($(".hand-video").length) {
+	const video = document.querySelector(".hand-video video");
+  
+	video.addEventListener("timeupdate", () => {
+	  if (video.currentTime >= 1.05) {
+		video.pause();
+	  }
 	});
+  
+	const observer = new IntersectionObserver(
+	  (entries) => {
+		entries.forEach((entry) => {
+		  if (entry.isIntersecting) {
+			video.play();
+		  } else {
+			video.pause();
+		  }
+		});
+	  },
+	  {
+		threshold: 0.5
+	  }
+	);
+  
+	observer.observe(video);
 }
 
-/* 
-	price-5-toggle-class
-*/
-if($(".sk-price-5-toggle-btn").length) {
-	$('.sk-price-5-toggle-btn').on('click', function () {
-		$(".sk-price-5-toggle-btn").toggleClass('active');
-		$(".sk-price-5-card .price-wrap").toggleClass('active');
-	});
-}
 
-
-/* 
-	price-6-toggle-class
-*/
-if($(".sk-price-6-toggle-btn").length) {
-	$('.sk-price-6-toggle-btn').on('click', function () {
-		$(".sk-price-6-toggle-btn").toggleClass('active');
-		$(".sk-price-6-card .price-wrap").toggleClass('active');
-	});
-}
-
-/* 
-	price-7-toggle-class
-*/
-if($(".skP7c1button").length) {
-	$('.skP7c1button').on('click', function () {
-		$(".skP7c1button").toggleClass('active');
-		$(".skP7c1price").toggleClass('active');
-	});
-}
-if($(".skP7c2button").length) {
-	$('.skP7c2button').on('click', function () {
-		$(".skP7c2button").toggleClass('active');
-		$(".skP7c2price").toggleClass('active');
-	});
-}
-if($(".skP7c3button").length) {
-	$('.skP7c3button').on('click', function () {
-		$(".skP7c3button").toggleClass('active');
-		$(".skP7c3price").toggleClass('active');
-	});
-}
-
-// price-3-heart-shape
-gsap.utils.toArray(".sk-price-3-card-ani .smoke").forEach((smoke, i) => {
+// price-1-heart-shape
+gsap.utils.toArray(".xr-price-1-card-single-ani .smoke").forEach((smoke, i) => {
     gsap.fromTo(smoke,
         {
             y: 15,
@@ -691,174 +648,232 @@ gsap.utils.toArray(".sk-price-3-card-ani .smoke").forEach((smoke, i) => {
     );
 });
 
+// price-1-big-title
+let skPrice3title = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".xr-price-1-big-title",
+		start: "top 90%", 
+		end: "top 40%",
+		toggleActions: "play none none reverse",
+		scrub: true,
+		markers: false,
+	},
+});
+skPrice3title.from(".xr-price-1-big-title", { y: 100 });
 
 /* 
-	testimonial-7-slider-function
+	price-1-toggle-class
 */
-if ($('.sk_t7_slider').length) {
-	var sk_t7_slider = new Swiper(".sk_t7_slider", {
-		loop: true,
-		speed: 600,
-		autoplay: {
-			delay: 4000,
-		},
-
+if($(".xr-price-1-toggle-btn").length) {
+	$('.xr-price-1-toggle-btn').on('click', function () {
+		$(".xr-price-1-toggle").toggleClass('active');
+		$(".xr-price-1-toggle-btn").toggleClass('active');
+		$('.xr-price-1-card-single .price-box').toggleClass('active');
 	});
-
 }
 
-setTimeout(() => {
-	if ($('.sk_t7_slider_2').length) {
-		var sk_t7_slider_2 = new Swiper(".sk_t7_slider_2", {
-			loop: true,
-			speed: 600,
-			direction: 'vertical',
-			autoplay: {
-				delay: 4000,
-			},
-	
-		});
-	
+// team-1-animation
+if (window.matchMedia("(min-width: 1600px)").matches) {
+	const members1 = gsap.utils.toArray(".xr-team-1-member");
+	const circle = document.querySelector("#teamPath");
+	const members1_content = members1.map(member => member.querySelector(".content-wrap"));
+	const members1_social = members1.map(member => member.querySelector(".team-social"));
+
+	let team1tl1 = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".xr-team-1-height",
+		start: "top 50%",
+		end: "bottom center",
+		scrub: true,
 	}
-}, 2000);
-
-
-// choose-8-slider-function
-if ($('.sk_c8_slider').length) {
-	var sk_c8_slider = new Swiper(".sk_c8_slider", {
-		loop: true,
-		speed: 600,
-		autoplay: {
-			delay: 4000,
-		},
-
-		pagination: {
-			el: '.sk_c8_slider_pagi',
-			clickable: true, 
-		},
+	});
+	gsap.set(members1, {
+		autoAlpha: 0
 	});
 
+	
+	team1tl1.from(members1, {
+		stagger: 0.2,
+		ease: "power3.out",
+		keyframes: [
+			{
+				motionPath: {
+					path: circle,
+					align: circle,    
+					alignOrigin: [0.5, 0.5]
+				},
+				autoAlpha: 1,
+				duration: 2
+			},
+		],
+	});
+	
+	team1tl1.to(members1, {
+		x: 0,
+	});
+	
+	team1tl1.from(members1_content, {
+		y: -50,
+		autoAlpha: 0
+	});
+	
+	team1tl1.fromTo(members1_social, {
+		visibility: "hidden"
+	}, {
+		visibility: "visible"
+	});
+
+	let team1tl2 = gsap.timeline({
+		scrollTrigger: {
+		trigger: ".xr-team-1-height",
+		start: "top 100%",
+		end: "bottom center",
+		scrub: true,
+		markers: false,
+		}
+	});
+	team1tl2.from(".xr-team-1-big-title-text", {
+		yPercent: 110,
+	});
 }
 
-if ($('.sk_pd_preview').length) { 
 
-	let sk_pd_preview = new Swiper('.sk_pd_preview', {
-		spaceBetween: 12,
+// choose-1-slider
+if ($('.xr_ch1_main_slider').length) {
+
+	const xr_ch1_main_slider = new Swiper('.xr_ch1_main_slider', {
 		loop: true,
-		speed: 600,
-		slidesPerView: 3,
-		watchSlidesProgress: true,	
-		direction: 'vertical',
-	});
-	
-	
-	
-	let sk_pd_main = new Swiper('.sk_pd_main', {
-		loop: true,
-		spaceBetween: 0,
+		speed: 1000,
 		slidesPerView: 1,
 
-		thumbs: {
-			swiper: sk_pd_preview,
+		effect: "fade",
+		fadeEffect: { crossFade: true },
+
+		autoplay: { delay: 3000 },
+
+	});
+  
+}
+
+// choose-1-big-title
+if (window.matchMedia("(min-width: 1600px)").matches) { 
+	let choose1tl1 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-choose-1-wrap",
+			start: "top 70%", 
+			end: "top 0%",
+			toggleActions: "play none none reverse",
+			markers: false,
 		},
 	});
-	
+	choose1tl1.from(".xr-choose-1-card-bg-shape svg .group-1 rect", { xPercent: -100 });
+	choose1tl1.from(".xr-choose-1-card-bg-shape svg .group-2 rect", { xPercent: 100},"<");
+	choose1tl1.from(".xr-choose-1-card-single", { autoAlpha: 0, });
 }
 
+// projects-1-animation 
+if (window.matchMedia("(min-width: 1600px)").matches) { 
+	const project1height = document.querySelector(".xr-projects-1-height");
+	const project1ItemImgList = document.querySelectorAll(".xr-projects-1-big-img-single");
 
-// product-view-toggle
+	project1height.style.height = `${project1ItemImgList.length * 100}vh`; 
 
-if($(".sk-shop-1-filter-view").length) {
-    const gridBtn = document.querySelector(".sk-shop-1-filter-view .grid-view");
-    const listBtn = document.querySelector(".sk-shop-1-filter-view .list-view");
-    const productWrap = document.querySelector(".sk-shop-1-grid");
+	const project1number = document.querySelectorAll(".xr-projects-1-number .single-number");
+	const project1numberLength = project1number.length;  
+	const eachStep2 = 1 / project1numberLength;
 
-    gridBtn.addEventListener("click", function () {
-        productWrap.classList.remove("list-view");
-        productWrap.classList.add("grid-view");
+	ScrollTrigger.create({
+	trigger: ".xr-projects-1-height",
+	start: "top top",
+	end: "bottom bottom",
+	scrub: true,
+	onUpdate: (self) => {
 
-        gridBtn.classList.add("active");
-        listBtn.classList.remove("active");
-    });
+		let progress = self.progress;
+		let index = Math.min(
+		project1numberLength - 1,
+		Math.floor(progress * project1numberLength)
+		);
 
-    listBtn.addEventListener("click", function () {
-        productWrap.classList.remove("grid-view");
-        productWrap.classList.add("list-view");
+		project1number.forEach(num => num.classList.remove("active"));
+		project1number[index].classList.add("active");
+	}
+	});
 
-        listBtn.classList.add("active");
-        gridBtn.classList.remove("active");
-    });
-};
 
-// price-range
-if($(".sk-sidebar-price-filter").length) { 
-	const minRange = document.getElementById("minRange");
-	const maxRange = document.getElementById("maxRange");
-	const minPrice = document.getElementById("minPrice");
-	const maxPrice = document.getElementById("maxPrice");
-	const sliderRange = document.getElementById("sliderRange");
+	const project1img = document.querySelectorAll(".xr-projects-1-big-img-single");
+	const project1imgLength = project1img.length;  
+	const eachStep = 1 / project1imgLength;
 
-	const minGap = 10;
-	const maxValue = 1000;
+	ScrollTrigger.create({
+	trigger: ".xr-projects-1-height",
+	start: "top top",
+	end: "bottom bottom",
+	scrub: true,
+	onUpdate: (self) => {
 
-	function updateSlider() {
-		let minVal = parseInt(minRange.value);
-		let maxVal = parseInt(maxRange.value);
+		let progress = self.progress;
+		let index = Math.min(
+		project1imgLength - 1,
+		Math.floor(progress * project1imgLength)
+		);
 
-		if (maxVal - minVal <= minGap) {
-			if (event.target.id === "minRange") {
-				minRange.value = maxVal - minGap;
-			} else {
-				maxRange.value = minVal + minGap;
-			}
-		}
+		project1img.forEach(num => num.classList.remove("active"));
+		project1img[index].classList.add("active");
+	}
+	});
 
-		minPrice.textContent = minRange.value;
-		maxPrice.textContent = maxRange.value;
 
-		const percent1 = (minRange.value / maxValue) * 100;
-		const percent2 = (maxRange.value / maxValue) * 100;
 
-		sliderRange.style.left = percent1 + "%";
-		sliderRange.style.width = (percent2 - percent1) + "%";
+
+	const project1cards = document.querySelectorAll(".xr-projects-1-card-single");
+	const project1cardsTotal = project1cards.length;
+
+	// initial state
+	gsap.set(project1cards, {
+	y: 820,
+	autoAlpha: 1
+	});
+
+	gsap.set(project1cards[0], {
+	y: 0,
+	autoAlpha: 1
+	});
+
+	let tl = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".xr-projects-1-height",
+		start: "top top",
+		end: "bottom bottom",
+		scrub: true,
+	}
+	});
+
+	for (let i = 1; i < project1cardsTotal; i++) {
+
+	tl.to(project1cards[i - 1], {
+		y: -820,
+		autoAlpha: 1,
+	})
+
+	.to(project1cards[i], {
+		y: 0,
+		autoAlpha: 1,
+	}, "<");
 	}
 
-	minRange.addEventListener("input", updateSlider);
-	maxRange.addEventListener("input", updateSlider);
 
-	updateSlider();
 }
 
-if($(".qty-stepper").length) {
 
-	document.querySelectorAll('.qty-stepper').forEach(stepper => {
-		const input = stepper.querySelector('.qty-input');
-		const btnPlus = stepper.querySelector('.plus');
-		const btnMinus = stepper.querySelector('.minus');
-	
-		const min = parseInt(stepper.dataset.min) || 1;
-		const max = parseInt(stepper.dataset.max) || 999;
-	
-		btnPlus.addEventListener('click', () => {
-			let val = parseInt(input.value) || min;
-			if (val < max) input.value = val + 1;
-			input.dispatchEvent(new Event('change'));
-		});
-	
-		btnMinus.addEventListener('click', () => {
-			let val = parseInt(input.value) || min;
-			if (val > min) input.value = val - 1;
-			input.dispatchEvent(new Event('change'));
-		});
-	
-		input.addEventListener('input', () => {
-			let val = parseInt(input.value);
-			if (val < min) input.value = min;
-			if (val > max) input.value = max;
-		});
-	});
-	
-}
+
+
+
+
+
+
+
+
 
 
 /* 
