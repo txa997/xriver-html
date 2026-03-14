@@ -22,6 +22,30 @@
         grid-template-columns: 1fr 1.65fr;
         gap: 100px;
         align-items: start;
+
+        @media #{$xxxl} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        @media #{$xxl} {
+            margin-left: 0px;
+            margin-right: 0px;
+            gap: 50px;
+        }
+
+        @media #{$xl} {
+            margin-left: 0px;
+            margin-right: 0px;
+            gap: 50px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            margin-left: 0px;
+            margin-right: 0px;
+            gap: 50px;
+            grid-template-columns: 1fr;
+        }
     }
 
     &-left {
@@ -31,6 +55,10 @@
         z-index: 1;
         overflow: hidden;
         padding: 40px 40px;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
 
         .bg-shape-1 {
             position: absolute;
@@ -53,6 +81,10 @@
             font-weight: 700;
             margin-bottom: 18px;
             line-height: 1;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                font-size: 25px;
+            }
         }
     }
 
@@ -85,6 +117,22 @@
             color: #fff;
             font-size: 44px;
             max-width: 700px;
+
+            @media #{$lg} {
+                font-size: 42px;
+            }
+        
+            @media #{$md} {
+                font-size: 38px;
+            }
+        
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        
+            @media #{$sm} {
+                font-size: 34px;
+            }
         }
     }
 
@@ -94,11 +142,19 @@
         gap: 75px;
         grid-template-columns: 1fr 2.89fr;
 
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+
         &-pane {
             height: 292px;
             border-radius: 16px;
             border: 3px solid #373737;
             overflow: hidden;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                max-width: 400px;
+            }
 
             .tab-pane {
                 width: 100%;

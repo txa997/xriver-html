@@ -20,6 +20,10 @@
             font-weight: 700;
             opacity: 48%;
             margin-bottom: 8px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 22px;
+            }
         }
 
         .link-elm {
@@ -29,6 +33,10 @@
             letter-spacing: -0.02em;
             margin-bottom: 37px;
             transition: var(--xr-cube-1);
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 28px;
+            }
 
             &:hover {
                 color: var(--xr-clr-pr-1);
@@ -40,6 +48,10 @@
             opacity: 80%;
             max-width: 550px;
             margin-bottom: 41px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                max-width: 300px;
+            }
         }
     }
 
@@ -48,6 +60,10 @@
     &-link {
         max-width: 648px;
         width: 100%;
+
+        @media #{$lg} {
+            max-width: 488px;
+        }
 
         ul {
             list-style: none;
@@ -119,6 +135,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+        }
     }
 
     &-video {
@@ -134,6 +154,30 @@
         font-size: 310px;
         line-height: .75;
         letter-spacing: -0.04em;
+
+        @media #{$xxl} {
+            font-size: 210px;
+        }
+
+        @media #{$xl} {
+            font-size: 180px;
+        }
+
+        @media #{$lg} {
+            font-size: 140px;
+        }
+
+        @media #{$md} {
+            font-size: 150px;
+        }
+
+        @media #{$xs} {
+            font-size: 50px;
+        }
+
+        @media #{$sm} {
+            font-size: 90px;
+        }
     }
 
 
@@ -143,6 +187,10 @@
         gap: 30px;
         justify-content: space-between;
         padding: 24px 0;
+
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
     }
     
     &-copyright {

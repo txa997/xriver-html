@@ -56,6 +56,7 @@
     &-sec-title {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .xr-subtitle-1 {
             align-self: start;
@@ -78,6 +79,23 @@
             span {
                 opacity: 32%;
             }
+
+
+            @media #{$lg} {
+                font-size: 42px;
+            }
+        
+            @media #{$md} {
+                font-size: 38px;
+            }
+        
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        
+            @media #{$sm} {
+                font-size: 34px;
+            }
         }
     }
 
@@ -85,6 +103,19 @@
     &-wrap {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr 1fr ;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr  ;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr  ;
+        }
+
     }
     
     &-logo {
@@ -112,7 +143,7 @@
             transition: var(--xr-cube-1);
         }
 
-        &:hover {
+        &:is(.active) {
             &::after {
                 opacity: 1;
             }

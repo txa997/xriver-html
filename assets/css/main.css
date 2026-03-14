@@ -6094,6 +6094,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-client-1-sec-title {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .xr-client-1-sec-title .xr-subtitle-1 {
   align-self: start;
@@ -6116,9 +6117,44 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-client-1-sec-title .xr-sec-title-1 span {
   opacity: 32%;
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .xr-client-1-sec-title .xr-sec-title-1 {
+    font-size: 42px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .xr-client-1-sec-title .xr-sec-title-1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 767px) {
+  .xr-client-1-sec-title .xr-sec-title-1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .xr-client-1-sec-title .xr-sec-title-1 {
+    font-size: 34px;
+  }
+}
 .xr-client-1-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .xr-client-1-wrap {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .xr-client-1-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .xr-client-1-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .xr-client-1-logo {
   display: flex;
@@ -6144,7 +6180,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   opacity: 0;
   transition: var(--xr-cube-1);
 }
-.xr-client-1-logo:hover::after {
+.xr-client-1-logo:is(.active)::after {
   opacity: 1;
 }
 
@@ -6188,6 +6224,9 @@ input:focus::placeholder, textarea:focus::placeholder {
   background-color: var(--xr-clr-pr-1);
   padding: 34px 0;
 }
+.xr-step-1-marquee-active .wa_marquee {
+  margin-bottom: -6px;
+}
 .xr-step-1-marquee-text-wrap {
   display: flex;
   gap: 30px;
@@ -6201,10 +6240,35 @@ input:focus::placeholder, textarea:focus::placeholder {
   color: #fff;
   flex: 0 0 auto;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .xr-step-1-marquee-text {
+    font-size: 80px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .xr-step-1-marquee-text {
+    font-size: 70px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .xr-step-1-marquee-text {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-step-1-marquee-text {
+    font-size: 50px;
+  }
+}
 .xr-step-1-wrap {
   position: relative;
   z-index: 1;
   padding: 200px 0;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-step-1-wrap {
+    padding: 100px 0;
+  }
 }
 .xr-step-1-card {
   position: absolute;
@@ -6218,8 +6282,21 @@ input:focus::placeholder, textarea:focus::placeholder {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-step-1-card {
+    position: unset;
+    transform: unset;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
 .xr-step-1-card-single {
-  position: absolute;
+  position: relative;
   background-color: #000;
   max-width: 640px;
   width: 100%;
@@ -6227,6 +6304,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   z-index: 1;
   overflow: hidden;
   padding: 50px 60px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-step-1-card-single {
+    max-width: 400px;
+    padding: 50px 20px;
+  }
 }
 .xr-step-1-card-single::after {
   content: "";
@@ -6259,6 +6342,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-weight: 700;
   margin-bottom: 17px;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-step-1-card-single .title {
+    font-size: 24px;
+  }
+}
 .xr-step-1-card-single .disc {
   color: #fff;
   opacity: 80%;
@@ -6283,7 +6371,35 @@ input:focus::placeholder, textarea:focus::placeholder {
   opacity: 25%;
   z-index: -1;
 }
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .xr-step-1-card-single-ani {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  .xr-step-1-card-single-ani:nth-child(1) .xr-step-1-card-single {
+    transform: rotate(-4deg);
+  }
+  .xr-step-1-card-single-ani:nth-child(2) .xr-step-1-card-single {
+    transform: rotate(6deg);
+  }
+  .xr-step-1-card-single-ani:nth-child(3) .xr-step-1-card-single {
+    transform: rotate(-5deg);
+  }
+  .xr-step-1-card-single-ani:nth-child(4) .xr-step-1-card-single {
+    transform: rotate(-1deg);
+  }
+}
 
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .xr-step-1-height {
+    position: relative;
+    z-index: 1;
+  }
+  .xr-step-1-pin {
+    position: sticky;
+    top: 0;
+  }
+}
 /* 
     step-1-end
 */
@@ -6294,6 +6410,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-wrap {
+    grid-template-columns: 1fr;
+  }
 }
 .xr-contact-1-left {
   background-color: #DCDCDC;
@@ -6307,6 +6428,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   gap: 8px;
   margin-bottom: 8px;
 }
+@media (max-width: 767px) {
+  .xr-contact-1-left-inner-div {
+    grid-template-columns: 1fr;
+  }
+}
 .xr-contact-1-left-author {
   position: relative;
   z-index: 1;
@@ -6315,6 +6441,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding-bottom: 24px;
   overflow: hidden;
   border-radius: 16px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-left-author {
+    background-color: #fff;
+  }
 }
 .xr-contact-1-left-author .bg-shape {
   position: absolute;
@@ -6348,10 +6479,20 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 16px;
   padding: 24px 36px;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-left-book {
+    padding: 24px 26px;
+  }
+}
 .xr-contact-1-left-book .title {
   font-size: 32px;
   letter-spacing: -0.02em;
   margin-bottom: 4px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-left-book .title {
+    font-size: 25px;
+  }
 }
 .xr-contact-1-left-book .disc {
   font-size: 20px;
@@ -6363,6 +6504,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-left-book .btn-wrap {
+    flex-wrap: wrap;
+  }
 }
 .xr-contact-1-left-book .link-elm {
   font-size: 15px;
@@ -6395,6 +6541,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   background-color: #000;
   border-radius: 20px;
   padding: 60px 60px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-contact-1-right {
+    padding: 60px 30px;
+  }
 }
 .xr-contact-1-right-content {
   margin-bottom: 20px;
@@ -6545,6 +6696,34 @@ input:focus::placeholder, textarea:focus::placeholder {
   gap: 100px;
   align-items: start;
 }
+@media only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .xr-faqs-1-wrap {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .xr-faqs-1-wrap {
+    margin-left: 0px;
+    margin-right: 0px;
+    gap: 50px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .xr-faqs-1-wrap {
+    margin-left: 0px;
+    margin-right: 0px;
+    gap: 50px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-faqs-1-wrap {
+    margin-left: 0px;
+    margin-right: 0px;
+    gap: 50px;
+    grid-template-columns: 1fr;
+  }
+}
 .xr-faqs-1-left {
   background-color: #1D1D1D;
   border-radius: 30px;
@@ -6552,6 +6731,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   z-index: 1;
   overflow: hidden;
   padding: 40px 40px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-faqs-1-left {
+    padding: 40px 20px;
+  }
 }
 .xr-faqs-1-left .bg-shape-1 {
   position: absolute;
@@ -6572,6 +6756,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-weight: 700;
   margin-bottom: 18px;
   line-height: 1;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-faqs-1-left-title {
+    font-size: 25px;
+  }
 }
 .xr-faqs-1-sec-title {
   display: flex;
@@ -6596,16 +6785,46 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-size: 44px;
   max-width: 700px;
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .xr-faqs-1-sec-title .xr-sec-title-1 {
+    font-size: 42px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .xr-faqs-1-sec-title .xr-sec-title-1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 767px) {
+  .xr-faqs-1-sec-title .xr-sec-title-1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .xr-faqs-1-sec-title .xr-sec-title-1 {
+    font-size: 34px;
+  }
+}
 .xr-faqs-1-tabs {
   display: grid;
   gap: 75px;
   grid-template-columns: 1fr 2.89fr;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-faqs-1-tabs {
+    grid-template-columns: 1fr;
+  }
 }
 .xr-faqs-1-tabs-pane {
   height: 292px;
   border-radius: 16px;
   border: 3px solid #373737;
   overflow: hidden;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-faqs-1-tabs-pane {
+    max-width: 400px;
+  }
 }
 .xr-faqs-1-tabs-pane .tab-pane {
   width: 100%;
@@ -6759,20 +6978,33 @@ input:focus::placeholder, textarea:focus::placeholder {
   margin-right: auto;
 }
 .xr-testimonial-1-bg-circle {
-  width: 1200px;
-  height: 1200px;
-  background: #fff;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -2;
-  will-change: transform, width, height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .xr-testimonial-1-bg-circle {
     display: none;
+  }
+}
+.xr-testimonial-1-bg-circle .circle-elm {
+  width: 1200px;
+  height: 1200px;
+  background: #fff;
+  border-radius: 50%;
+  will-change: transform, width, height;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-testimonial-1-bg-circle .circle-elm {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
   }
 }
 .xr-testimonial-1-big-title {
@@ -6856,11 +7088,13 @@ input:focus::placeholder, textarea:focus::placeholder {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .xr-testimonial-1-slider-main-item .comment {
     font-size: 28px;
+    margin-bottom: 50px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .xr-testimonial-1-slider-main-item .comment {
     font-size: 22px;
+    margin-bottom: 50px;
   }
 }
 .xr-testimonial-1-slider-main .swiper-wrapper .swiper-slide .xr-testimonial-1-slider-main-item .author-name, .xr-testimonial-1-slider-main .swiper-wrapper .swiper-slide .xr-testimonial-1-slider-main-item .author-dg, .xr-testimonial-1-slider-main .swiper-wrapper .swiper-slide .xr-testimonial-1-slider-main-item .icon-elm, .xr-testimonial-1-slider-main .swiper-wrapper .swiper-slide .xr-testimonial-1-slider-main-item .comment {
@@ -6987,6 +7221,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   gap: 200px;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-blog-1-sec-title {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
 .xr-blog-1-sec-title .xr-subtitle-1 {
   flex: 0 0 auto;
   align-items: start;
@@ -6998,6 +7238,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: grid;
   grid-template-columns: 1fr 1.02fr;
   gap: 12px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-blog-1-wrap {
+    grid-template-columns: 1fr;
+  }
 }
 .xr-blog-1-item {
   background-color: #fff;
@@ -7040,6 +7285,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-blog-1-item .content-wrap {
   padding: 36px 35px;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-blog-1-item .content-wrap {
+    padding: 36px 22px;
+  }
+}
 .xr-blog-1-item .title {
   font-size: 36px;
   letter-spacing: -0.02em;
@@ -7049,6 +7299,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .xr-blog-1-item .title:hover {
   color: var(--xr-clr-pr-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-blog-1-item .title {
+    font-size: 24px;
+  }
 }
 .xr-blog-1-item .disc {
   opacity: 80%;
@@ -7064,6 +7319,16 @@ input:focus::placeholder, textarea:focus::placeholder {
   grid-template-columns: 1fr 1.35fr;
   align-items: center;
 }
+@media (max-width: 767px) {
+  .xr-blog-1-item-2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .xr-blog-1-item-2 {
+    grid-template-columns: 1fr 1.35fr;
+  }
+}
 .xr-blog-1-item-2 .img-elm {
   height: 250px;
   border-radius: 12px;
@@ -7078,6 +7343,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: space-between;
   height: 100%;
   gap: 30px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-blog-1-item-2 .content-wrap {
+    padding: 25px 22px;
+  }
 }
 .xr-blog-1-item-2 .item-author {
   display: flex;
@@ -7113,10 +7383,13 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-blog-1-item-2:hover .img-elm img {
   transform: scale(1.1);
 }
+.xr-blog-1-item-2:not(:last-of-type) {
+  margin-bottom: 8px;
+}
 .xr-blog-1-content {
   max-width: 664px;
   margin-left: auto;
-  margin-top: 82px;
+  margin-top: 72px;
 }
 .xr-blog-1-content .disc {
   margin-bottom: 24px;
@@ -7144,6 +7417,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   opacity: 48%;
   margin-bottom: 8px;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-footer-1-contact .title {
+    font-size: 22px;
+  }
+}
 .xr-footer-1-contact .link-elm {
   color: #fff;
   font-size: 56px;
@@ -7151,6 +7429,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   letter-spacing: -0.02em;
   margin-bottom: 37px;
   transition: var(--xr-cube-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-footer-1-contact .link-elm {
+    font-size: 28px;
+  }
 }
 .xr-footer-1-contact .link-elm:hover {
   color: var(--xr-clr-pr-1);
@@ -7161,9 +7444,19 @@ input:focus::placeholder, textarea:focus::placeholder {
   max-width: 550px;
   margin-bottom: 41px;
 }
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-footer-1-contact .disc {
+    max-width: 300px;
+  }
+}
 .xr-footer-1-link {
   max-width: 648px;
   width: 100%;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .xr-footer-1-link {
+    max-width: 488px;
+  }
 }
 .xr-footer-1-link ul {
   list-style: none;
@@ -7218,6 +7511,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .xr-footer-1-logo-x-video {
+    flex-wrap: wrap;
+  }
+}
 .xr-footer-1-video {
   width: 492px;
   height: 220px;
@@ -7230,12 +7528,47 @@ input:focus::placeholder, textarea:focus::placeholder {
   line-height: 0.75;
   letter-spacing: -0.04em;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .xr-footer-1-logo {
+    font-size: 210px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .xr-footer-1-logo {
+    font-size: 180px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .xr-footer-1-logo {
+    font-size: 140px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .xr-footer-1-logo {
+    font-size: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .xr-footer-1-logo {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .xr-footer-1-logo {
+    font-size: 90px;
+  }
+}
 .xr-footer-1-bottom {
   display: flex;
   border-top: 1px solid rgba(255, 255, 255, 0.32);
   gap: 30px;
   justify-content: space-between;
   padding: 24px 0;
+}
+@media (max-width: 767px) {
+  .xr-footer-1-bottom {
+    flex-wrap: wrap;
+  }
 }
 .xr-footer-1-copyright {
   color: rgba(255, 255, 255, 0.72);

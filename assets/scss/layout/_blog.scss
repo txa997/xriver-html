@@ -10,6 +10,11 @@
         display: flex;
         gap: 200px;
 
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
         .xr-subtitle-1 {
             flex: 0 0 auto;
             align-items: start;
@@ -27,6 +32,11 @@
         display: grid;
         grid-template-columns: 1fr 1.02fr;
         gap: 12px;
+
+
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;  
+        }
     }
 
     &-item {
@@ -75,6 +85,10 @@
 
         .content-wrap {
             padding: 36px 35px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 36px 22px;
+            }
         }
         
         .title {
@@ -86,6 +100,10 @@
 
             &:hover {
                 color: var(--xr-clr-pr-1);
+            }
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 24px;
             }
         }
         
@@ -111,6 +129,14 @@
         grid-template-columns: 1fr 1.35fr;
         align-items: center;
 
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1.35fr;
+        }
+
         .img-elm {
             height: 250px;
             border-radius: 12px;
@@ -127,6 +153,10 @@
             justify-content: space-between;
             height: 100%;
             gap: 30px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 25px 22px;
+            }
         }
 
         .item-author {
@@ -176,12 +206,17 @@
                 }
             }
         }
+
+
+        &:not(:last-of-type) {
+            margin-bottom: 8px;
+        }
     }
     
     &-content {
         max-width: 664px;
         margin-left: auto;
-        margin-top: 82px;
+        margin-top: 72px;
 
         .disc {
             margin-bottom: 24px;

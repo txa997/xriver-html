@@ -6,6 +6,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
+
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+        }
     }
 
     &-left {
@@ -20,6 +25,10 @@
             grid-template-columns: 1.93fr 1fr;
             gap: 8px;
             margin-bottom: 8px;
+
+            @media #{$xs} {
+                grid-template-columns: 1fr;
+            }
         }
 
         &-author {
@@ -30,6 +39,10 @@
             padding-bottom: 24px;
             overflow: hidden;
             border-radius: 16px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                background-color: #fff;
+            }
 
             .bg-shape {
                 position: absolute;
@@ -71,10 +84,18 @@
             border-radius: 16px;
             padding: 24px 36px;
 
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                padding: 24px 26px;
+            }
+
             .title {
                 font-size: 32px;
                 letter-spacing: -0.02em;
                 margin-bottom: 4px;
+
+                @media #{$xxl,$xl,$lg,$md,$xs} {
+                    font-size: 25px;
+                }
             }
             
 
@@ -89,6 +110,10 @@
                 display: flex;
                 align-items: center;
                 gap: 12px;
+
+                @media #{$xl,$lg,$md,$xs} {
+                    flex-wrap: wrap;
+                }
             }
 
             .link-elm {
@@ -132,6 +157,11 @@
         background-color: #000;
         border-radius: 20px;
         padding: 60px 60px;
+
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            padding: 60px 30px;
+        }
 
         &-content {
             margin-bottom: 20px;
