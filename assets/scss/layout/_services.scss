@@ -221,9 +221,13 @@
         &-disc {
             display: flex;
             align-items: center;
-            gap: 120px;
+            gap: 182px;
             padding: 60px 0;
             padding-left: 110px;
+
+            @media #{$xl,$lg} {
+                gap: 100px;
+            }
 
             @media #{$md,$xs} {
                 padding: 80px 20px;
@@ -362,7 +366,9 @@
             }
         }
 
-        
+        &:is(.active) {
+            backdrop-filter: blur(40px);
+        }
     }
 }
 
