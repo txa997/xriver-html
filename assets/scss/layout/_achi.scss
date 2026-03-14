@@ -262,6 +262,17 @@
         min-height: 300px;
         display: flex;
         align-items: end;
+        background-color: #D0C9BB;
+        overflow: hidden;
+
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
 
         .rating {
@@ -368,9 +379,13 @@
                     height: 48px;
                     border-radius: 50%;
                     border: 2px solid #fff;
-
+                    transition: var(--xr-cube-1);
                     &:not(:first-child) {
                         margin-left: -15px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2);
                     }
                 }
                 

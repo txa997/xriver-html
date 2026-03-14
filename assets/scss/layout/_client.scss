@@ -123,13 +123,15 @@
         align-items: center;
         justify-content: center;
         border-radius: 32px;
-        border: 1px dashed rgb(255 255 255 / 20%);
+        border: 1px dashed #454344;
         height: 152px;
         padding: 10px;
         position: relative;
         z-index: 1;
         overflow: hidden;
-
+        transition: 1s;
+        margin-top: -1px;
+        margin-left: -1px;
         &::after {
             content: "";
             width: 100%;
@@ -143,9 +145,17 @@
             transition: var(--xr-cube-1);
         }
 
-        &:is(.active) {
+        &:hover {
             &::after {
                 opacity: 1;
+            }
+        }
+
+        &:is(.active) {
+            border: none;
+
+            img {
+                animation: pulse 1s;
             }
         }
     }

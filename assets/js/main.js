@@ -603,12 +603,6 @@ if ($('.xr_t1_main_slider').length) {
 if ($(".hand-video").length) {
 	const video = document.querySelector(".hand-video video");
   
-	video.addEventListener("timeupdate", () => {
-	  if (video.currentTime >= 1.05) {
-		video.pause();
-	  }
-	});
-  
 	const observer = new IntersectionObserver(
 	  (entries) => {
 		entries.forEach((entry) => {
