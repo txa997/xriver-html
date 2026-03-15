@@ -138,6 +138,8 @@
         border-radius: 14px;
         border: 5px solid transparent;
         z-index: 1;
+        max-width: 276px;
+        
 
         @media #{$md,$xs} {
             right: 15px;
@@ -374,6 +376,7 @@
         right: 18%;
         z-index: -1;
         width: 38%;
+        max-width: 726px;
 
         @media #{$xxxl,$xxl,$xl} {
             width: 52%;

@@ -3551,6 +3551,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 14px;
   border: 5px solid transparent;
   z-index: 1;
+  max-width: 276px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .xr-hero-1-author {
@@ -3780,6 +3781,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   right: 18%;
   z-index: -1;
   width: 38%;
+  max-width: 726px;
 }
 @media only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
   .xr-hero-1-img {
