@@ -3569,6 +3569,9 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-hero-1-author .big-img img {
   border-radius: 10px;
 }
+.xr-hero-1-author .big-img video {
+  border-radius: 10px;
+}
 .xr-hero-1-author .img-x-text {
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(12px);
