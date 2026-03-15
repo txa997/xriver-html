@@ -369,7 +369,7 @@
         bottom: 0;
         right: 18%;
         z-index: -1;
-        width: 36%;
+        width: 38%;
 
         @media #{$xxxl,$xxl,$xl} {
             width: 52%;
@@ -383,6 +383,10 @@
         @media #{$md,$xs} {
             right: 8%;
             width: 70%;
+        }
+
+        img {
+            width: 100%;
         }
 
     }

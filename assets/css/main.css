@@ -3776,7 +3776,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   bottom: 0;
   right: 18%;
   z-index: -1;
-  width: 36%;
+  width: 38%;
 }
 @media only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
   .xr-hero-1-img {
@@ -3794,6 +3794,9 @@ input:focus::placeholder, textarea:focus::placeholder {
     right: 8%;
     width: 70%;
   }
+}
+.xr-hero-1-img img {
+  width: 100%;
 }
 .xr-hero-1-active {
   position: absolute;
@@ -4279,6 +4282,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   width: 100%;
   gap: 35px;
 }
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .xr-services-1-accordion-item .item-title {
+    padding: 0;
+    padding-left: 26px;
+  }
+}
 .xr-services-1-accordion-item .item-title .number {
   color: var(--xr-clr-pr-1);
   font-size: 16px;
@@ -4412,7 +4421,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   align-items: center;
   gap: 182px;
   padding: 60px 0;
-  padding-left: 110px;
+  padding-left: 130px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .xr-services-1-accordion-item-disc {

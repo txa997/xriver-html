@@ -73,6 +73,11 @@
             width: 100%;
             gap: 35px;
 
+            @media #{$over,$xxxl} {
+                padding: 0;
+                padding-left: 26px;
+            }
+
             .number {
                 color: var(--xr-clr-pr-1);
                 font-size: 16px;
@@ -223,7 +228,7 @@
             align-items: center;
             gap: 182px;
             padding: 60px 0;
-            padding-left: 110px;
+            padding-left: 130px;
 
             @media #{$xl,$lg} {
                 gap: 100px;
