@@ -797,67 +797,43 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 
 	const project1img = document.querySelectorAll(".xr-projects-1-big-img-single");
 	const project1imgLength = project1img.length;  
-	const eachStep = 1 / project1imgLength;
 
-	ScrollTrigger.create({
-	trigger: ".xr-projects-1-height",
-	start: "top top",
-	end: "bottom bottom",
-	scrub: true,
-	onUpdate: (self) => {
 
-		let progress = self.progress;
-		let index = Math.min(
-		project1imgLength - 1,
-		Math.floor(progress * project1imgLength)
-		);
-
-		project1img.forEach(num => num.classList.remove("active"));
-		project1img[index].classList.add("active");
-	}
+	var projects1imgTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-projects-1-height",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+		},
+	});
+	projects1imgTl.to(".xr-projects-1-big-img-single:not(:last-child)", {
+		height: 0,
+		stagger: 1,
 	});
 
-
-
-
-	const project1cards = document.querySelectorAll(".xr-projects-1-card-single");
-	const project1cardsTotal = project1cards.length;
-
-	// initial state
-	gsap.set(project1cards, {
-	y: 820,
-	autoAlpha: 1
+	var projects1imgTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-projects-1-height",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+		},
+	});
+	projects1imgTl.to(".xr-projects-1-card-wrap", {
+		y: (i, el) => -(el.offsetHeight - 434)
 	});
 
-	gsap.set(project1cards[0], {
-	y: 0,
-	autoAlpha: 1
-	});
-
-	let tl = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".xr-projects-1-height",
-		start: "top top",
-		end: "bottom bottom",
-		scrub: true,
-	}
-	});
-
-	for (let i = 1; i < project1cardsTotal; i++) {
-
-	tl.to(project1cards[i - 1], {
-		y: -820,
-		autoAlpha: 1,
-	})
-
-	.to(project1cards[i], {
-		y: 0,
-		autoAlpha: 1,
-	}, "<");
-	}
 
 
 }
+
+
+
+
+
+
+
 
 // client-1-animation
 if($(".xr-client-1-logo").length) {
