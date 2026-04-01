@@ -668,67 +668,70 @@ if($(".xr-price-1-toggle-btn").length) {
 
 // team-1-animation
 if (window.matchMedia("(min-width: 1600px)").matches) {
-	const members1 = gsap.utils.toArray(".xr-team-1-member");
-	const circle = document.querySelector("#teamPath");
-	const members1_content = members1.map(member => member.querySelector(".content-wrap"));
-	const members1_social = members1.map(member => member.querySelector(".team-social"));
-
-	let team1tl1 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".xr-team-1-height",
-		start: "top 50%",
-		end: "bottom center",
-		scrub: true,
-	}
-	});
-	gsap.set(members1, {
-		autoAlpha: 0
-	});
-
+	if($("#teamPath").length) {
+		const members1 = gsap.utils.toArray(".xr-team-1-member");
+		const circle = document.querySelector("#teamPath");
+		const members1_content = members1.map(member => member.querySelector(".content-wrap"));
+		const members1_social = members1.map(member => member.querySelector(".team-social"));
 	
-	team1tl1.from(members1, {
-		stagger: 0.2,
-		ease: "power3.out",
-		keyframes: [
-			{
-				motionPath: {
-					path: circle,
-					align: circle,    
-					alignOrigin: [0.5, 0.5]
-				},
-				autoAlpha: 1,
-				duration: 2
-			},
-		],
-	});
-	
-	team1tl1.to(members1, {
-		x: 0,
-	});
-	
-	team1tl1.from(members1_content, {
-		y: -50,
-		autoAlpha: 0
-	});
-	
-	team1tl1.fromTo(members1_social, {
-		visibility: "hidden"
-	}, {
-		visibility: "visible"
-	});
-
-	let team1tl2 = gsap.timeline({
+		let team1tl1 = gsap.timeline({
 		scrollTrigger: {
-		trigger: ".xr-team-1-height",
-		start: "top 100%",
-		end: "bottom center",
-		scrub: true,
-		markers: false,
+			trigger: ".xr-team-1-height",
+			start: "top 50%",
+			end: "bottom center",
+			scrub: true,
 		}
-	});
-	team1tl2.from(".xr-team-1-big-title-text", {
-		yPercent: 110,
-	});
+		});
+		gsap.set(members1, {
+			autoAlpha: 0
+		});
+	
+		
+		team1tl1.from(members1, {
+			stagger: 0.2,
+			ease: "power3.out",
+			keyframes: [
+				{
+					motionPath: {
+						path: circle,
+						align: circle,    
+						alignOrigin: [0.5, 0.5]
+					},
+					autoAlpha: 1,
+					duration: 2
+				},
+			],
+		});
+		
+		team1tl1.to(members1, {
+			x: 0,
+		});
+		
+		team1tl1.from(members1_content, {
+			y: -50,
+			autoAlpha: 0
+		});
+		
+		team1tl1.fromTo(members1_social, {
+			visibility: "hidden"
+		}, {
+			visibility: "visible"
+		});
+	
+		let team1tl2 = gsap.timeline({
+			scrollTrigger: {
+			trigger: ".xr-team-1-height",
+			start: "top 100%",
+			end: "bottom center",
+			scrub: true,
+			markers: false,
+			}
+		});
+		team1tl2.from(".xr-team-1-big-title-text", {
+			yPercent: 110,
+		});
+	}
+	
 }
 
 
@@ -767,64 +770,64 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 
 // projects-1-animation 
 if (window.matchMedia("(min-width: 1600px)").matches) { 
-	const project1height = document.querySelector(".xr-projects-1-height");
-	const project1ItemImgList = document.querySelectorAll(".xr-projects-1-big-img-single");
-
-	project1height.style.height = `${project1ItemImgList.length * 100}vh`; 
-
-	const project1number = document.querySelectorAll(".xr-projects-1-number .single-number");
-	const project1numberLength = project1number.length;  
-	const eachStep2 = 1 / project1numberLength;
-
-	ScrollTrigger.create({
-	trigger: ".xr-projects-1-height",
-	start: "top top",
-	end: "bottom bottom",
-	scrub: true,
-	onUpdate: (self) => {
-
-		let progress = self.progress;
-		let index = Math.min(
-		project1numberLength - 1,
-		Math.floor(progress * project1numberLength)
-		);
-
-		project1number.forEach(num => num.classList.remove("active"));
-		project1number[index].classList.add("active");
+	if($(".xr-projects-1-height").length) {
+		const project1height = document.querySelector(".xr-projects-1-height");
+		const project1ItemImgList = document.querySelectorAll(".xr-projects-1-big-img-single");
+	
+		project1height.style.height = `${project1ItemImgList.length * 100}vh`; 
+	
+		const project1number = document.querySelectorAll(".xr-projects-1-number .single-number");
+		const project1numberLength = project1number.length;  
+		const eachStep2 = 1 / project1numberLength;
+	
+		ScrollTrigger.create({
+		trigger: ".xr-projects-1-height",
+		start: "top top",
+		end: "bottom bottom",
+		scrub: true,
+		onUpdate: (self) => {
+	
+			let progress = self.progress;
+			let index = Math.min(
+			project1numberLength - 1,
+			Math.floor(progress * project1numberLength)
+			);
+	
+			project1number.forEach(num => num.classList.remove("active"));
+			project1number[index].classList.add("active");
+		}
+		});
+	
+	
+		const project1img = document.querySelectorAll(".xr-projects-1-big-img-single");
+		const project1imgLength = project1img.length;  
+	
+	
+		var projects1imgTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".xr-projects-1-height",
+				start: "top top",
+				end: "bottom bottom",
+				scrub: true,
+			},
+		});
+		projects1imgTl.to(".xr-projects-1-big-img-single:not(:last-child)", {
+			height: 0,
+			stagger: 1,
+		});
+	
+		var projects1imgTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".xr-projects-1-height",
+				start: "top top",
+				end: "bottom bottom",
+				scrub: true,
+			},
+		});
+		projects1imgTl.to(".xr-projects-1-card-wrap", {
+			y: (i, el) => -(el.offsetHeight - 434)
+		});
 	}
-	});
-
-
-	const project1img = document.querySelectorAll(".xr-projects-1-big-img-single");
-	const project1imgLength = project1img.length;  
-
-
-	var projects1imgTl = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".xr-projects-1-height",
-			start: "top top",
-			end: "bottom bottom",
-			scrub: true,
-		},
-	});
-	projects1imgTl.to(".xr-projects-1-big-img-single:not(:last-child)", {
-		height: 0,
-		stagger: 1,
-	});
-
-	var projects1imgTl = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".xr-projects-1-height",
-			start: "top top",
-			end: "bottom bottom",
-			scrub: true,
-		},
-	});
-	projects1imgTl.to(".xr-projects-1-card-wrap", {
-		y: (i, el) => -(el.offsetHeight - 434)
-	});
-
-
 
 }
 
@@ -852,26 +855,27 @@ if($(".xr-client-1-logo").length) {
 
 // step-1-animation
 if (window.matchMedia("(min-width: 1600px)").matches) { 
-	const step1height = document.querySelector(".xr-step-1-height");
-	const stepItemList = document.querySelectorAll(".xr-step-1-card-single");
-
-	step1height.style.height = `${stepItemList.length * 100}vh`; 
-
-	let step1tl1 = gsap.timeline({
-		scrollTrigger: {
-			trigger: step1height,
-			start: "top 70%",
-			end: "bottom bottom",
-			scrub: true,
-		}
-	});
+	if($(".xr-step-1-height").length) {
+		const step1height = document.querySelector(".xr-step-1-height");
+		const stepItemList = document.querySelectorAll(".xr-step-1-card-single");
 	
-	step1tl1.from(stepItemList, {
-		transform: "translate3d(0px, 0px, 0px) rotate(20deg) rotateY(300deg) rotateX(100deg) scale(0, 0)",
-		stagger: 1,
-	})
+		step1height.style.height = `${stepItemList.length * 100}vh`; 
 	
-
+		let step1tl1 = gsap.timeline({
+			scrollTrigger: {
+				trigger: step1height,
+				start: "top 70%",
+				end: "bottom bottom",
+				scrub: true,
+			}
+		});
+		
+		step1tl1.from(stepItemList, {
+			transform: "translate3d(0px, 0px, 0px) rotate(20deg) rotateY(300deg) rotateX(100deg) scale(0, 0)",
+			stagger: 1,
+		})
+		
+	}
 }
 
 // testimonial-1-animation
@@ -1122,6 +1126,14 @@ if($('.nice-select').length) {
 $("[data-background]").each(function(){
 	$(this).css("background-image","url("+$(this).attr("data-background") + ") ")
 })
+
+/* 
+    data-mask-image
+*/
+$('[data-mask-image]').each(function() {
+    $(this).css('mask-image', 'url('+ $(this).attr('data-mask-image') + ')');
+});
+
 
 /* 
 	counter-activation

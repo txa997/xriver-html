@@ -482,3 +482,203 @@
 /* 
     hero-1-end
 */
+/* 
+    hero-2-start
+*/
+.xr-hero-2 {
+    &-area {
+        padding-top: 230px;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 140px;
+    }
+    &-subtitle {
+        font-weight: 500;
+        font-family: 'ThunderMed';
+        font-size: 110px;
+        letter-spacing: 0;
+        margin-bottom: -15px;
+
+        span {
+            color: var(--xr-clr-pr-2);
+        }
+        
+    }
+
+    &-title {
+        display: inline-block;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-size: 220px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        font-family: 'ThunderSemBd';
+        margin-bottom: 150px;
+    }
+
+    &-disc {
+        max-width: 586px;
+        margin-left: 274px;
+    }
+
+    &-title-2 {
+        font-size: 220px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+
+
+    &-video {
+        width: 226px;
+        height: 226px;
+        mask-size: 100% 100%;
+        margin-top: 16px;
+    }
+
+
+    &-bg-content {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        
+        &-box {
+            margin-top: 505px;
+            .inner-box {
+                display: flex;
+                gap: 45px;
+            }
+        }
+    }
+
+    &-bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        z-index: -1;
+    }
+
+
+    &-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        text-align: center;
+        width: 100%;
+        max-width: 312px;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        background-size: 100% 100%;
+    }
+
+
+    &-social {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 85px;
+    }
+    
+    
+    &-counter {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        gap: 62px;
+
+        &-item {
+            display: inline-block;
+            max-width: 200px;
+
+            .title {
+                position: relative;
+                z-index: 1;
+                font-size: 112px;
+                letter-spacing: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: -20px;
+
+
+                .number {
+                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                }
+                .plus {
+                    font-size: 80px;
+                    color: #F3B1E1;
+                }
+            }
+
+            .disc {
+                opacity: 1;
+                margin-top: -10px;
+            }
+            
+
+            &:nth-child(2) {
+                .title {
+                    .plus {
+                        color: var(--xr-clr-pr-2);
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .title {
+                    .plus {
+                        color: #F35F36;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+h4.xr-h-2.title 
+
+.xr-hero-2-counter-item {}
+
+.xr-hero-2-counter-item {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.xr-hero-2-counter {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 62px;
+}
+
+a.xr-pr-btn-2 {
+    display: inline-flex;
+    font-weight: 500;
+    font-family: "ThunderMed";
+    font-size: 20px;
+    line-height: 1;
+}
+
+a.xr-pr-btn-2 .text {
+    background-color: var(--xr-clr-pr-2);
+    border-radius: 6px;
+    padding: 14px 22px;
+    padding-top: 18px;
+}
+
+/* 
+    hero-2-end
+*/
