@@ -300,3 +300,127 @@
 /* 
     projects-1-end
 */
+
+/* 
+    projects-2-start
+*/
+.xr-projects-2 {
+    &-sec-title {
+        font-family: var(--xr-font-3);
+        text-align: center;
+        font-size: 168px;
+        letter-spacing: 0;
+
+        &:is(.has-2) {
+            text-align: right;
+        }
+
+        &:is(.has-1) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &-top {
+        &-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 50px;
+        }
+    }
+
+    &-content {
+        max-width: 426px;
+        margin-left: 101px;
+
+        .disc {
+            margin-bottom: 33px;
+        }
+    }
+
+
+    &-counter {
+        width: 203px;
+        height: 188px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .line-shape {
+            position: absolute;
+            width: 100%;
+            inset: 0;
+        }
+
+        .number {
+            font-size: 68px;
+            letter-spacing: 0;
+            color: var(--c);
+        }
+    }
+    
+
+}
+
+
+
+.xr-projects-2 {
+    &-gallery {
+        position: relative;
+        z-index: 1;
+        width: 320px;
+        height: 360px;
+
+        &-img {
+            width: 100%;
+            max-width: 320px;
+            height: 360px;
+            transition: .5s;
+        }
+    }
+}
+
+.xr-projects-2-gallery {
+    perspective: 2000px;
+}
+
+.xr-projects-2-gallery-img {
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    &-ani {
+        position: absolute;
+        inset: 0;
+        z-index: -4;
+
+        &:nth-child(1) {
+            z-index: 1;
+            .xr-projects-2-gallery-img {
+                transform: rotate(-6deg);
+            }
+        }
+        &:nth-child(2) {
+            z-index: -1;
+            .xr-projects-2-gallery-img {
+                transform: rotate(5deg);
+            }
+        }
+
+        &:nth-child(3) {
+            z-index: -2;
+            .xr-projects-2-gallery-img {
+                transform: rotate(11deg);
+            }
+        }
+        &:nth-child(4) {
+            z-index: -3;
+            .xr-projects-2-gallery-img {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+/* 
+    projects-2-end
+*/

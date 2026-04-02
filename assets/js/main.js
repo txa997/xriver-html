@@ -833,11 +833,6 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 
 
 
-
-
-
-
-
 // client-1-animation
 if($(".xr-client-1-logo").length) {
 	function randomActive() {
@@ -897,13 +892,69 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 }
 
 
+// client-2-slider
+if ($('.xr_client2_slider').length) { 
+	var xr_client2_slider = new Swiper(".xr_client2_slider", {
+		slidesPerView: 6,
+		spaceBetween: 30,
 
 
 
+		breakpoints: {
+		  320: {
+			slidesPerView: 1,
+		  },
+		  576: {
+			slidesPerView: 2,
+		  },
+		  768: {
+			slidesPerView: 3,
+		  },
+		  992: {
+			slidesPerView: 5,
+		  },
+		  1200: {
+			slidesPerView: 6,
+		  },
+		},
+	});
+}
 
+gsap.registerPlugin();
 
+const gallery = document.querySelector(".xr-projects-2-gallery");
 
+function autoRotate() {
 
+    const cards = document.querySelectorAll(".xr-projects-2-gallery-img-ani");
+    const first = cards[0];
+
+    // cinematic animation
+    gsap.to(first, {
+        rotateY: -79,
+        x: -118,
+        z: 80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "expo.inOut",
+        onComplete: () => {
+
+            // reset position instantly
+            gsap.set(first, {
+                rotateY: 0,
+                x: 0,
+                z: 0,
+                opacity: 1
+            });
+
+            // move first to bottom
+            gallery.appendChild(first);
+        }
+    });
+}
+
+// auto loop every 3s
+setInterval(autoRotate, 3000);
 /* 
 	progress-animation
 */
