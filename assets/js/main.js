@@ -480,6 +480,40 @@ function afterPageLoad() {
 	},"<30%")
 
 
+	// hero-2-tl
+	let hero2tl1 = gsap.timeline()
+	hero2tl1.from(".xr-hero-2-bg-img-single", {
+		yPercent: 100,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+		delay: .7,
+	})
+	hero2tl1.from(".xr-hero-2-title", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+		delay: .4,
+	})
+	hero2tl1.from(".xr-hero-2-video", {
+		y: 50,
+		x: -50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+	},"<50%")
+	hero2tl1.from(".xr-hero-2-disc", {
+		y: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+	},"<20%")
+	hero2tl1.from(".xr-hero-2-right", {
+		xPercent: 100,
+		duration: 1,
+		ease: "expo.out",
+	},"<20%")
 
 /* 
 	after-page-load-start
@@ -539,6 +573,44 @@ gsap.utils.toArray(".wa_zoomOut_img").forEach(wa_zoomOut_img => {
 	);
 });
 
+	
+if ($(".wa_magnetic_btn_3").length) {
+    var waMagnets3 = document.querySelectorAll('.wa_magnetic_btn_3');
+    var waStrength3 = 100;
+
+    waMagnets3.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet3);
+        magnet.addEventListener('mouseout', function(event) {
+            const innerElements = event.currentTarget.querySelectorAll('.wa_magnetic_btn_3_elm');
+            innerElements.forEach((elm) => {
+                gsap.to(elm, {
+                    x: 0,
+                    y: 0,
+                    duration: 1,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            });
+        });
+    });
+
+    function moveMagnet3(event) {
+        var magnetButton = event.currentTarget;
+        var bounding = magnetButton.getBoundingClientRect();
+        const innerElements = magnetButton.querySelectorAll('.wa_magnetic_btn_3_elm');
+
+        const xMove = (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * waStrength3;
+        const yMove = (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * waStrength3;
+
+        innerElements.forEach((elm) => {
+            gsap.to(elm, {
+                x: xMove,
+                y: yMove,
+                duration: 1,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+    }
+}
 
 
 
@@ -897,8 +969,14 @@ if ($('.xr_client2_slider').length) {
 	var xr_client2_slider = new Swiper(".xr_client2_slider", {
 		slidesPerView: 6,
 		spaceBetween: 30,
-
-
+		loop: true,
+		autoplay: { delay: 4000 },
+		
+		navigation: {
+			nextEl: ".xr_client2_next",
+			prevEl: ".xr_client2_prev",
+		},
+		
 
 		breakpoints: {
 		  320: {

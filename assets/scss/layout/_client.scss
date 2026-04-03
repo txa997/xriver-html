@@ -175,6 +175,12 @@
         padding: 12px 0;
     }
 
+    &-container {
+        @media #{$over} {
+            margin-left: -160px;
+            margin-right: -160px;
+        }
+    }
     &-wrap {
         display: grid;
         align-items: center;
@@ -226,6 +232,17 @@
 
     &-logo {
         text-align: center;
+
+        img {
+            transition: .4s var(--xr-cube-2);
+
+        }
+
+        &:hover {
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
     }
     
     &-slider-btn {
