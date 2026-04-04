@@ -1053,6 +1053,37 @@ wa_progress_ani.forEach((elm) => {
 
 
 
+// video-1-animation
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+	let video2tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-video-2-area",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+			markers: false,
+		}
+	});
+	
+	video2tl.to(".xr-video-2-wrap-inner", {
+		width: "100%",
+		height: "100vh"
+	})
+	
+	
+	video2tl.from(".xr-video-2-item img", {
+		scale: 2,
+	},"<")
+	
+	
+	video2tl.to(".xr-video-2-item", {
+		borderRadius: "0px",
+	},"<")
+	
+}
+
+
+
 /* 
     marquee-activation
 */

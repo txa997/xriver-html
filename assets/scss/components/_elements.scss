@@ -123,6 +123,20 @@
     .text {
         margin-bottom: -4px;
     }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.16) 100%);
+        padding: 1px;
+        z-index: -1;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+    }
 }
 
 @keyframes xr-available-btn {

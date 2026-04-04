@@ -16,7 +16,6 @@
     }
     
     &-sec-title {
-        font-size: 100px;
         position: sticky;
         top: 100px;
 
@@ -24,41 +23,7 @@
             position: unset;
             top: 0px;
         }
-        span {
-            display: inline;
-            letter-spacing: 0;
-            opacity: .7;
-        }
 
-
-        @media #{$xxxl} {
-            font-size: 90px;
-        }
-
-
-        @media #{$xxl} {
-            font-size: 80px;
-        }
-
-        @media #{$xl} {
-            font-size: 70px;
-        }
-
-        @media #{$lg} {
-            font-size: 60px;
-        }
-
-        @media #{$md} {
-            font-size: 50px;
-        }
-
-        @media #{$xs} {
-            font-size: 35px;
-        }
-
-        @media #{$sm} {
-            font-size: 40px;
-        }
     }
 
     &-item {

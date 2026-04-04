@@ -124,7 +124,43 @@
     }
 }
 
+.xr-sec-title-2 {
+    font-family: "ThunderSemBd";
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    font-size: 100px;
+    margin-bottom: 0px;
 
+    span {
+        display: inline;
+        opacity: 72%;
+    }
+
+    @media #{$xxl} {
+        font-size: 90px;
+    }
+
+    @media #{$xl} {
+        font-size: 80px;
+    }
+
+    @media #{$lg} {
+        font-size: 70px;
+    }
+
+    @media #{$md} {
+        font-size: 60px;
+    }
+
+    @media #{$xs} {
+        font-size: 40px;
+    }
+
+    @media #{$sm} {
+        font-size: 50px;
+    }
+}
 
 
 /* 
