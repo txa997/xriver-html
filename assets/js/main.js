@@ -1051,9 +1051,30 @@ wa_progress_ani.forEach((elm) => {
 	});
 });
 
+// about-2-svg-animation
+if($(".xr-about-2-bg-line").length) {
+	const path = document.querySelector(".xr-about-2-bg-line .draw-line");
+	const pathLength = path.getTotalLength();
+	
+	gsap.set(path, {
+	  strokeDasharray: pathLength,
+	  strokeDashoffset: pathLength
+	});
+	
+	gsap.to(path, {
+	  strokeDashoffset: 0,
+	  ease: "none",
+	  scrollTrigger: {
+		trigger: ".xr-about-2-bg-line",
+		start: "top 80%",
+		end: "bottom 20%",
+		scrub: true
+	  }
+	});
+}
 
 
-// video-1-animation
+// video-2-animation
 if (window.matchMedia("(min-width: 1400px)").matches) {  
 	let video2tl = gsap.timeline({
 		scrollTrigger: {
@@ -1081,6 +1102,10 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 	},"<")
 	
 }
+
+
+
+
 
 
 
