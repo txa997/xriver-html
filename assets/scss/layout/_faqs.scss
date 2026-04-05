@@ -350,3 +350,59 @@
 /* 
     faqs-1-end
 */
+
+/* 
+    faqs-2-start
+*/
+.xr-faqs-2 {
+    &-wrap {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 1fr 1.19fr;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-content {
+        .sec-disc {
+            max-width: 541px;
+            margin-bottom: 33px;
+        }
+
+        .sec-title {
+            margin-bottom: 8px;
+        }
+    }
+    
+    &-right {
+        .xr-accordion {
+            gap: 8px;
+            &-item {
+                border: 1px solid rgb(255 255 255 / 32%);
+                background-color: transparent;
+                .item-title {
+                    opacity: 1;
+    
+                    .text {
+                        font-family: var(--xr-font-3);
+                        color: var(--xr-clr-sd-3);
+                        opacity: 1;
+                        font-weight: 600;
+                        margin-bottom: -4px;
+                    }
+                }
+    
+                &:is(.active) {
+                    border: 1px solid rgb(255 255 255 / 0%);
+                    background-color: #202020;
+                }
+            }
+        }
+    }
+}
+
+/* 
+    faqs-2-end
+*/

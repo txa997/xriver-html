@@ -1104,9 +1104,80 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 }
 
 
+// testimonial-2-animation
+if (window.matchMedia("(min-width: 1600px)").matches) {
+	if($(".xr-testimonial-2-card").length) {
+  
+		const t2cards = gsap.utils.toArray(".xr-testimonial-2-card");
+	
+		gsap.set(t2cards, { pointerEvents: "none" });
+	
+		// Scroll Animation
+		gsap.from(t2cards, {
+		x: 300,
+		rotate: -10,
+		autoAlpha: 0,
+		duration: 0.5,
+		ease: "power3.out",
+		stagger: 0.1,
+		scrollTrigger: {
+			trigger: ".xr-testimonial-2-wrap",
+			start: "top 80%",
+		},
+		onComplete: initHover   
+		});
+	
+		// Hover Function
+		function initHover() {
+		gsap.set(t2cards, { pointerEvents: "auto" });
+	
+		t2cards.forEach((card, index) => {
+	
+			card.addEventListener("mouseenter", () => {
+	
+			t2cards.forEach((item, i) => {
+	
+				item.style.transition = "all 0.4s ease";
+	
+				if (i === index) {
+				item.style.transform = "rotate(0deg) translateX(0px)";
+				item.style.zIndex = "5";
+				} 
+				else if (i < index) {
+				item.style.transform = "rotate(-4deg) translateX(-70px)";
+				item.style.zIndex = "1";
+				} 
+				else {
+				item.style.transform = "rotate(4deg) translateX(70px)";
+				item.style.zIndex = "1";
+				}
+	
+			});
+	
+			});
+	
+			card.addEventListener("mouseleave", () => {
+	
+			t2cards.forEach((item, i) => {
+	
+				item.style.zIndex = "1";
+	
+				if (i % 2 === 0) {
+				item.style.transform = "rotate(-4deg) translateX(0px)";
+				} else {
+				item.style.transform = "rotate(4deg) translateX(0px)";
+				}
+	
+			});
+	
+			});
+	
+		});
+	
+		}
 
-
-
+	}
+}
 
 
 /* 

@@ -294,3 +294,210 @@
         }
     }
 }
+/* 
+    testimonial-1-end
+*/
+/* 
+    testimonial-2-start
+*/
+.xr-testimonial-2 {
+    &-marquee {
+        &-text {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin-right: 35px;
+
+            .single-text {
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.256) 0%, rgba(255, 255, 255, 0.032) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.14);
+                display: flex;
+                align-items: center;
+                gap: 35px;
+                font-size: 184px;
+                margin-bottom: -40px;
+                flex: 0 0 auto;
+
+                @media #{$xxl,$xl,$lg,$md,$xs} {
+                    font-size: 84px;
+                    margin-bottom: 0;
+                }
+
+                i {
+                    font-size: 140px;
+                    margin-top: -30px;
+
+                    @media #{$xxl,$xl,$lg,$md,$xs} {
+                        font-size: 40px;
+                        margin-top: 0px;
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
+
+
+.xr-testimonial-2 {
+    &-wrap {
+        display: flex;
+        justify-content: center;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            flex-wrap: wrap;
+        }
+    }
+    
+    &-card {
+        max-width: 448px;
+        width: 100%;
+        padding: 36px 36px;
+        background-color: var(--xr-clr-sd-3);
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 552px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            padding: 36px 20px;
+            min-height: 402px;
+        }
+
+
+        &:not(:first-child) {
+            @media #{$over,$xxxl} {
+                margin-left: -240px;
+            }
+        }
+
+        &:nth-child(odd) {
+            @media #{$over,$xxxl} {
+                transform: rotate(-4deg);
+            }
+        }
+
+        &:nth-child(even) {
+            @media #{$over,$xxxl} {
+                transform: rotate(4deg);
+            }
+        }
+
+
+        .rating {
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 17px;
+        }
+
+        .comment {
+            font-size: 40px;
+            font-family: "Thunder";
+            font-weight: 500;
+            letter-spacing: 0;
+            margin-bottom: 21px;
+
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+               font-size: 30px;
+            }
+        }
+
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: auto;
+
+            &-img {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+            }
+
+            &-name {
+                font-size: 28px;
+            }
+         
+            
+            &-bio {
+                font-size: 16px;
+            }
+            
+        }
+
+
+
+        
+        &:is(.has-clr-2) {
+            background-color: #66FF5E;
+            .rating {
+                color: #000;
+            }
+            .comment {
+                color: #000;
+            }
+            .author-name {
+                color: #000;
+            }
+            .author-bio {
+                color: #000;
+            }
+        }
+        
+        &:is(.has-clr-3) {
+            background-color: #777EFF;
+        }
+
+        &:is(.has-clr-4) {
+            background-color: var(--xr-clr-pr-2);
+            .rating {
+                color: #000;
+            }
+            .comment {
+                color: #000;
+            }
+            .author-name {
+                color: #000;
+            }
+            .author-bio {
+                color: #000;
+            }
+        }
+
+        &:is(.has-clr-5) {
+            background-color: #FF5EA4;
+        }
+
+        &:is(.has-clr-6) {
+            background-color: #02D5F8;
+            .rating {
+                color: #000;
+            }
+            .comment {
+                color: #000;
+            }
+            .author-name {
+                color: #000;
+            }
+            .author-bio {
+                color: #000;
+            }
+        }
+    }
+}
+
+
+/* 
+    testimonial-2-end
+*/
