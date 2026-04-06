@@ -998,41 +998,39 @@ if ($('.xr_client2_slider').length) {
 	});
 }
 
-gsap.registerPlugin();
-
-const gallery = document.querySelector(".xr-projects-2-gallery");
-
-function autoRotate() {
-
-    const cards = document.querySelectorAll(".xr-projects-2-gallery-img-ani");
-    const first = cards[0];
-
-    // cinematic animation
-    gsap.to(first, {
-        rotateY: -79,
-        x: -118,
-        z: 80,
-        opacity: 0,
-        duration: 1.2,
-        ease: "expo.inOut",
-        onComplete: () => {
-
-            // reset position instantly
-            gsap.set(first, {
-                rotateY: 0,
-                x: 0,
-                z: 0,
-                opacity: 1
-            });
-
-            // move first to bottom
-            gallery.appendChild(first);
-        }
-    });
+// projects-2-gallery
+if($(".xr-projects-2-gallery").length) {
+	const gallery = document.querySelector(".xr-projects-2-gallery");
+	function autoRotate() {
+	
+		const cards = document.querySelectorAll(".xr-projects-2-gallery-img-ani");
+		const first = cards[0];
+	
+		gsap.to(first, {
+			rotateY: -79,
+			x: -118,
+			z: 80,
+			opacity: 0,
+			duration: 1.2,
+			ease: "expo.inOut",
+			onComplete: () => {
+	
+				gsap.set(first, {
+					rotateY: 0,
+					x: 0,
+					z: 0,
+					opacity: 1
+				});
+	
+				gallery.appendChild(first);
+			}
+		});
+	}
+	
+	setInterval(autoRotate, 3000);
 }
 
-// auto loop every 3s
-setInterval(autoRotate, 3000);
+
 /* 
 	progress-animation
 */
@@ -1069,6 +1067,29 @@ if($(".xr-about-2-bg-line").length) {
 		start: "top 80%",
 		end: "bottom 20%",
 		scrub: true
+	  }
+	});
+}
+
+// projects-2-svg-animation
+if($(".xr-projects-2-counter .line-shape").length) {
+	const path = document.querySelector(".xr-projects-2-counter .line-shape .svg-path");
+	const pathLength = path.getTotalLength();
+	
+	gsap.set(path, {
+	  strokeDasharray: pathLength,
+	  strokeDashoffset: pathLength
+	});
+	
+	gsap.to(path, {
+	  strokeDashoffset: 0,
+	  ease: "none",
+	  duration: 2,
+	  scrollTrigger: {
+		trigger: ".xr-projects-2-counter .line-shape ",
+		start: "top 80%",
+		end: "bottom 20%",
+		// scrub: true
 	  }
 	});
 }
@@ -1178,6 +1199,40 @@ if (window.matchMedia("(min-width: 1600px)").matches) {
 
 	}
 }
+
+// skill-2-animation
+if (window.matchMedia("(min-width: 1400px)").matches) { 
+	let skill2img = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-skill-2-img",
+			start: "top 100%", 
+			end: "top 20%", 
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	skill2img.to(".xr-skill-2-img img", { y: -60 });
+}
+
+
+if($(".wa_hover_class_toggle").length) {
+    const wa_hover_class = document.querySelectorAll(".wa_hover_class_toggle");
+    const defaultActive = document.querySelector(".wa_hover_class_toggle.active");
+    wa_hover_class.forEach(card => {
+        card.addEventListener("mouseenter", function () {
+            wa_hover_class.forEach(c => c.classList.remove("active"));
+            this.classList.add("active");
+        });
+        card.addEventListener("mouseleave", function () {
+            wa_hover_class.forEach(c => c.classList.remove("active"));
+            if (defaultActive) {
+                defaultActive.classList.add("active");
+            }
+
+        });
+    });
+};
 
 
 /* 

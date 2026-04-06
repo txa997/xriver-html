@@ -97,6 +97,7 @@
     line-height: 1;
     position: relative;
     z-index: 1;
+    transition: var(--xr-cube-1);
     
     .dot-elm {
         width: 16px;
@@ -136,6 +137,10 @@
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
+    }
+
+    &:hover {
+        background: var(--xr-clr-pr-2);
     }
 }
 

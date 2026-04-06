@@ -515,6 +515,10 @@
             @media #{$md,$xs} {
                 height: 386px;
             }
+
+            img {
+                transition: 1s var(--xr-cube-2);
+            }
         }
         
 
@@ -532,6 +536,12 @@
         .title {
             font-size: 40px;
             max-width: 420px;
+            transition:  var(--xr-cube-1);
+
+
+            &:hover {
+                color: var(--xr-clr-pr-2);
+            }
 
             @media #{$xxl,$xl,$lg,$md,$xs} {
                 font-size: 30px;
@@ -554,6 +564,7 @@
                 position: relative;
                 z-index: 1;
                 padding: 4px 12px;
+                transition:  var(--xr-cube-1);
 
 
                 &::after {
@@ -568,9 +579,20 @@
                     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
                     mask-composite: exclude;
                 }
+
+                &:hover {
+                    color: var(--xr-clr-pr-2);
+                }
             }
         }
 
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
 
         &:is(.has-v2) {
             .card-img {

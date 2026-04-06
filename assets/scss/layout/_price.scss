@@ -605,7 +605,7 @@
             text-align: center;
         }
 
-        &:hover {
+        &:is(.active) {
             background-color: #2B2B2B;
             border: 1px solid rgb(255 255 255 / 12%);
             .card-top {
@@ -646,13 +646,14 @@
         }
 
         .title {
-            font-size: 32px;
-            margin-bottom: 13px;
+            font-size: 42px;
+            margin-bottom: 3px;
         }
 
         .left {
             max-width: 230px;
             width: 100%;
+            align-self: center;
         }
         .icon-elm {
             width: 100%;
