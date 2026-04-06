@@ -179,6 +179,7 @@
 
             <!-- hero-start -->
             <section class="xr-hero-2-area wa-bg-default wa-fix wa_magnetic_btn_3" data-background="assets/img/hero/h2-bg-img.png">
+                <canvas></canvas>
                 <div class="container xr-container-1">
                     <div class="xr-hero-2-content">
                         <h3 class="xr-h-2 xr-hero-2-subtitle wa-split-up-1" data-split-delay=".7">I Am <span>Devon Lane,</span></h3>
@@ -193,7 +194,8 @@
                         <div class="xr-hero-2-bg-content-box">
                             <div class="inner-box">
                                 <div class="xr-hero-2-video wa-img-cover wa-video-cover wa-fix" data-mask-image="assets/img/hero/h2-mask-img-1.png">
-                                    <img src="assets/img/hero/h2-video-1.jpg" alt="">
+                                    <!-- <img src="assets/img/hero/h2-video-1.jpg" alt=""> -->
+                                    <video src="assets/img/hero/h2-video.mp4" muted autoplay loop></video>
                                 </div>
                                 <h2 class="xr-h-2 xr-hero-2-title-2 wa-split-up-1" data-split-delay="1.9">Designer</h2>
                             </div>
@@ -216,7 +218,7 @@
 
                 <!-- right-content -->
                 <div class="xr-hero-2-right" data-background="assets/img/hero/h2-bg-noise.png">
-
+                    <div class="xr-hero-2-right-line" data-background="assets/img/hero/h2-bg-noise-line.png"></div>
 
 
                     <!-- counter -->
@@ -473,8 +475,8 @@
 
             <!-- career-start -->
             <section class="xr-career-2-area wa-p-relative pt-125 pb-125">
-                <div class="xr-career-2-bg-clr-1-box wa-fix">
-                    <svg class="xr-career-2-bg-clr-1 wow fadeIn" data-wow-offset="100" data-wow-duration="3s" preserveAspectRatio="none" viewBox="0 0 1920 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="xr-career-2-bg-clr-1-box wa-fix wow fadeIn" data-wow-offset="100" data-wow-duration="3s">
+                    <svg class="xr-career-2-bg-clr-1 "  preserveAspectRatio="none" viewBox="0 0 1920 417" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_fn_421_1384)">
                         <ellipse cx="960" cy="-46.5" rx="765" ry="103.5" fill="#F35F36"/>
                         </g>
@@ -500,8 +502,8 @@
                     </svg>
                 </div>
 
-                <div class="xr-career-2-bg-clr-2-box wa-fix">
-                    <svg class="xr-career-2-bg-clr-2  wow fadeIn" data-wow-offset="100" data-wow-duration="3s" preserveAspectRatio="none" viewBox="0 0 1920 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="xr-career-2-bg-clr-2-box wa-fix wow fadeIn" data-wow-offset="100" data-wow-duration="3s">
+                    <svg class="xr-career-2-bg-clr-2  "  preserveAspectRatio="none" viewBox="0 0 1920 287" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_f_421_1385)">
                         <ellipse cx="960" cy="463.5" rx="765" ry="103.5" fill="#F35F36"/>
                         </g>
@@ -613,7 +615,7 @@
                         <div class="xr-projects-2-top-inner">
 
                             <div class="elm-box">
-                                <h3 class="xr-h-2 xr-projects-2-sec-title has-2 wa-split-text split-line-up">DESIGN</h3>
+                                <h3 class="xr-h-2 xr-projects-2-sec-title has-2 ">DESIGN</h3>
                                 <div class="xr-projects-2-counter wa-p-relative">
                                     <svg class="line-shape" preserveAspectRatio="none" viewBox="0 0 208 194" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="svg-path" opacity="0.32" d="M206.003 61.0267C111.408 1.93001 11.4743 15.948 3.47226 90.5111C-7.00201 188.101 161.086 233.632 183.63 138.996C203.495 55.6049 144.548 1.12256 65.1775 3.04951" stroke="white" stroke-width="6"/>
@@ -626,7 +628,7 @@
                             </div>
 
                             <!-- slider -->
-                            <div class="elm-box wow fadeInUp2" data-wow-offset="100">
+                            <div class="elm-box " >
                                 <div class="xr-projects-2-gallery">
                                     <div class="xr-projects-2-gallery-img-ani">
                                         <div class="xr-projects-2-gallery-img wa-fix wa-img-cover">
@@ -655,7 +657,7 @@
                                 </div>
                             </div>
                             <div class="elm-box">
-                                <h3 class="xr-h-2 xr-projects-2-sec-title has-3 wa-split-text split-line-up">PROJECTS</h3>
+                                <h3 class="xr-h-2 xr-projects-2-sec-title has-3 ">PROJECTS</h3>
                                 <div class="xr-projects-2-content">
                                     <p class="xr-p-2 disc wow fadeInUp2" data-wow-offset="100">Explore a selection of product design projects focused on solving real user problems through research, strategy, intuitive interfaces, and meaningful digital experiences.</p>
 
@@ -797,32 +799,33 @@
 
             <!-- services-start -->
             <section class="xr-services-2-area wa-fix wa-p-relative pt-100 pb-125">
-                <div class="xr-services-2-bg-line wow zoomIn" data-wow-duration="3s"></div>
-                <svg class="xr-services-2-bg-clr wow fadeIn" data-wow-duration="3s" preserveAspectRatio="none" viewBox="0 0 1920 417" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.6" filter="url(#filter0_fn_421_1391)">
-                    <ellipse cx="960" cy="-46.5" rx="765" ry="103.5" fill="white"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_fn_421_1391" x="-165" y="-510" width="2250" height="927" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur_421_1391"/>
-                    <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7625" />
-                    <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
-                    <feComponentTransfer in="alphaNoise" result="coloredNoise1">
-                    <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
-                    </feComponentTransfer>
-                    <feComposite operator="in" in2="effect1_foregroundBlur_421_1391" in="coloredNoise1" result="noise1Clipped" />
-                    <feFlood flood-color="rgba(0, 0, 0, 0.52)" result="color1Flood" />
-                    <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
-                    <feMerge result="effect2_noise_421_1391">
-                    <feMergeNode in="effect1_foregroundBlur_421_1391" />
-                    <feMergeNode in="color1" />
-                    </feMerge>
-                    </filter>
-                    </defs>
-                </svg>
-                    
+                <div class="xr-services-2-bg-line wow zoomIn" data-wow-offset="100" data-wow-duration="3s"></div>
+                <div class="xr-services-2-bg-clr wow fadeIn text-center" data-wow-offset="100" data-wow-duration="3s">
+                    <svg class="w-100"  preserveAspectRatio="none" viewBox="0 0 1920 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.6" filter="url(#filter0_fn_421_1391)">
+                        <ellipse cx="960" cy="-46.5" rx="765" ry="103.5" fill="white"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_fn_421_1391" x="-165" y="-510" width="2250" height="927" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur_421_1391"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7625" />
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                        <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="effect1_foregroundBlur_421_1391" in="coloredNoise1" result="noise1Clipped" />
+                        <feFlood flood-color="rgba(0, 0, 0, 0.52)" result="color1Flood" />
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+                        <feMerge result="effect2_noise_421_1391">
+                        <feMergeNode in="effect1_foregroundBlur_421_1391" />
+                        <feMergeNode in="color1" />
+                        </feMerge>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>  
 
                 <div class="container xr-container-1">
                     <h3 class="xr-h-2 xr-services-2-sec-title wow fadeInUp2" data-wow-offset="200" data-wow-duration="2s">SERVICES</h3>
@@ -908,12 +911,18 @@
             <!-- skill-start -->
             <section class="xr-skill-2-area wa-fix wa-p-relative wa-fix">
 
-                <svg class="xr-skill-2-bg-shape-1 wow slideInLeft" data-wow-duration="2s" data-wow-offset="100" preserveAspectRatio="none" viewBox="0 0 172 644" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M-471.992 644C-471.997 643.465 -472 642.928 -472 642.39C-472 560.637 -411.668 492.972 -333.099 481.496C-411.56 470.725 -472 403.421 -472 322C-472 233.082 -399.918 161 -311 161H-309.39C-398.66 161 -471.128 89.0655 -471.992 0H171.994C171.127 89.0655 98.6613 161 9.39 161H11C99.9171 161 172 233.082 172 322C172 403.421 111.561 470.725 33.0989 481.496C111.667 492.972 172 560.637 172 642.39C172 642.928 171.997 643.465 171.994 644H-471.992Z" fill="#212121"/>
-                </svg>
-                <svg class="xr-skill-2-bg-shape-2 wow slideInRight" data-wow-duration="2s" data-wow-offset="100" preserveAspectRatio="none" viewBox="0 0 286 644" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M0.00780522 644C0.00260573 643.465 0 642.928 0 642.39C0 560.637 60.3319 492.972 138.901 481.496C60.4397 470.725 0 403.421 0 322C0 233.082 72.0823 161 161 161H162.61C73.3403 161 0.871712 89.0655 0.00780522 0H643.994C643.127 89.0655 570.661 161 481.39 161H483C571.917 161 644 233.082 644 322C644 403.421 583.561 470.725 505.099 481.496C583.667 492.972 644 560.637 644 642.39C644 642.928 643.997 643.465 643.994 644H0.00780522Z" fill="#212121"/>
-                </svg>
+                <div class="xr-skill-2-bg-shape-1 wow slideInLeft" data-wow-duration="2s" data-wow-offset="100">
+                    <svg class="w-100 h-100 "  preserveAspectRatio="none" viewBox="0 0 172 644" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M-471.992 644C-471.997 643.465 -472 642.928 -472 642.39C-472 560.637 -411.668 492.972 -333.099 481.496C-411.56 470.725 -472 403.421 -472 322C-472 233.082 -399.918 161 -311 161H-309.39C-398.66 161 -471.128 89.0655 -471.992 0H171.994C171.127 89.0655 98.6613 161 9.39 161H11C99.9171 161 172 233.082 172 322C172 403.421 111.561 470.725 33.0989 481.496C111.667 492.972 172 560.637 172 642.39C172 642.928 171.997 643.465 171.994 644H-471.992Z" fill="#212121"/>
+                    </svg>
+                </div>
+
+                <div class="xr-skill-2-bg-shape-2 wow slideInRight" data-wow-duration="2s" data-wow-offset="100">
+                    <svg class="w-100 h-100 "  preserveAspectRatio="none" viewBox="0 0 286 644" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M0.00780522 644C0.00260573 643.465 0 642.928 0 642.39C0 560.637 60.3319 492.972 138.901 481.496C60.4397 470.725 0 403.421 0 322C0 233.082 72.0823 161 161 161H162.61C73.3403 161 0.871712 89.0655 0.00780522 0H643.994C643.127 89.0655 570.661 161 481.39 161H483C571.917 161 644 233.082 644 322C644 403.421 583.561 470.725 505.099 481.496C583.667 492.972 644 560.637 644 642.39C644 642.928 643.997 643.465 643.994 644H0.00780522Z" fill="#212121"/>
+                    </svg>
+                </div>
+
                         
 
                 <div class="container xr-container-1">
@@ -1015,31 +1024,33 @@
                     <img src="assets/img/price/p2-bg-img-1.png" alt="">
                 </div>
                 <div class="xr-price-2-bg-line wow zoomIn" data-wow-offset="100" data-wow-duration="3s"></div>
-                <svg class="xr-price-2-bg-glow wow fadeIn" data-wow-offset="100" data-wow-duration="3s" preserveAspectRatio="none" viewBox="0 0 1920 434" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.7" filter="url(#filter0_fn_421_1399)">
-                    <ellipse cx="960" cy="-59.7929" rx="765" ry="133.087" fill="white"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_fn_421_1399" x="-165" y="-552.88" width="2250" height="986.174" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur_421_1399"/>
-                    <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7625" />
-                    <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
-                    <feComponentTransfer in="alphaNoise" result="coloredNoise1">
-                    <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
-                    </feComponentTransfer>
-                    <feComposite operator="in" in2="effect1_foregroundBlur_421_1399" in="coloredNoise1" result="noise1Clipped" />
-                    <feFlood flood-color="rgba(0, 0, 0, 0.52)" result="color1Flood" />
-                    <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
-                    <feMerge result="effect2_noise_421_1399">
-                    <feMergeNode in="effect1_foregroundBlur_421_1399" />
-                    <feMergeNode in="color1" />
-                    </feMerge>
-                    </filter>
-                    </defs>
-                </svg>
-                    
+                <div class="xr-price-2-bg-glow wow fadeIn text-center" data-wow-offset="100" data-wow-duration="3s">
+                    <svg class="w-100"  preserveAspectRatio="none" viewBox="0 0 1920 434" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.7" filter="url(#filter0_fn_421_1399)">
+                        <ellipse cx="960" cy="-59.7929" rx="765" ry="133.087" fill="white"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_fn_421_1399" x="-165" y="-552.88" width="2250" height="986.174" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur_421_1399"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7625" />
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                        <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="effect1_foregroundBlur_421_1399" in="coloredNoise1" result="noise1Clipped" />
+                        <feFlood flood-color="rgba(0, 0, 0, 0.52)" result="color1Flood" />
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+                        <feMerge result="effect2_noise_421_1399">
+                        <feMergeNode in="effect1_foregroundBlur_421_1399" />
+                        <feMergeNode in="color1" />
+                        </feMerge>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div> 
+
                 <div class="container xr-container-1">
                     <div class="xr-price-2-container">
 
@@ -1269,7 +1280,7 @@
                     <div class="xr-step-2-wrap">
 
                         <!-- single-card -->
-                        <div class="xr-step-2-card wow slideInUp" >
+                        <div class="xr-step-2-card wow slideInUp wa_hover_class_toggle_2" >
                             <div class="card-img wa-fix wa-img-cover">
                                 <img src="assets/img/step/s2-img-1.jpg" alt="">
                             </div>
@@ -1286,7 +1297,7 @@
                         </div>
 
                         <!-- single-card -->
-                        <div class="xr-step-2-card wow slideInUp" data-wow-delay=".2s">
+                        <div class="xr-step-2-card wow slideInUp wa_hover_class_toggle_2 active" data-wow-delay=".2s">
                             <div class="card-img wa-fix wa-img-cover">
                                 <img src="assets/img/step/s2-img-2.jpg" alt="">
                             </div>
@@ -1303,7 +1314,7 @@
                         </div>
 
                         <!-- single-card -->
-                        <div class="xr-step-2-card wow slideInUp" data-wow-delay=".4s">
+                        <div class="xr-step-2-card wow slideInUp wa_hover_class_toggle_2" data-wow-delay=".4s">
                             <div class="card-img wa-fix wa-img-cover">
                                 <img src="assets/img/step/s2-img-3.jpg" alt="">
                             </div>
@@ -1320,7 +1331,7 @@
                         </div>
 
                         <!-- single-card -->
-                        <div class="xr-step-2-card wow slideInUp" data-wow-delay=".6s">
+                        <div class="xr-step-2-card wow slideInUp wa_hover_class_toggle_2" data-wow-delay=".6s">
                             <div class="card-img wa-fix wa-img-cover">
                                 <img src="assets/img/step/s2-img-4.jpg" alt="">
                             </div>
@@ -2189,9 +2200,10 @@
 
             <!-- back-to-top-button-start -->            
             <div class="wa-back-to-top wa_backToTop">
-                <i class="fa-solid fa-angle-up"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="injected-svg" data-src="https://static.elfsight.com/icons/app-back-to-top-arrow-4.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M8 6.74 11.748 2l3.75 4.74h-3l.001 14.998H11V6.74z"></path></svg>
             </div>
             <!-- back-to-top-button-end -->
+
 
         </div>
 
@@ -2212,6 +2224,7 @@
         <script src="assets/js/CustomEase.min.js"></script>
         <script src="assets/js/appear.js"></script>
         <script src="assets/js/cursor.js"></script>
+        <script src="assets/js/canvas.js"></script>
         <script src="assets/js/ScrollTrigger.min.js"></script>
         <script src="assets/js/main.js"></script>
         

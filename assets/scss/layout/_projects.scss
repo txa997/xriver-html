@@ -321,6 +321,11 @@
 
         &:is(.has-1) {
             margin-bottom: 20px;
+
+            @media #{$over,$xxxl,$xxl} {
+                transform: translateX(30px);
+            }
+
         }
 
 
@@ -351,6 +356,11 @@
 
     &-top {
         margin-bottom: 70px;
+
+
+        @media #{$over,$xxxl,$xxl} {
+            transform: translateX(-80px);
+        }
 
         &-inner {
             display: grid;

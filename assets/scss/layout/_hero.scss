@@ -491,10 +491,21 @@
         position: relative;
         z-index: 1;
         padding-bottom: 140px;
+        background-color: #212121;
 
         @media #{$lg,$md,$xs} {
             padding-top: 160px;
             padding-bottom: 0;
+        }
+
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
     }
     &-subtitle {
@@ -537,7 +548,7 @@
 
     &-title {
         display: inline-block;
-        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 73%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -620,6 +631,10 @@
         height: 226px;
         mask-size: 100% 100%;
         margin-top: 16px;
+
+        video {
+            transform: scale(2);
+        }
     }
 
 
@@ -633,7 +648,7 @@
         }
         
         &-box {
-            margin-top: 505px;
+            margin-top: 500px;
 
 
             @media #{$xxl} {
@@ -686,9 +701,9 @@
         }
 
         &-single {
-            margin-bottom: -50px;
-            margin-right: -180px;
-            width: 93%;
+            margin-bottom: -17px;
+            margin-right: -100px;
+            width: 86%;
             position: relative;
             z-index: 1;
 
@@ -736,6 +751,14 @@
             max-width: 100%;
             padding: 50px 20px;
             z-index: 1;
+        }
+
+        &-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
         }
 
         .xr-pr-btn-2 {
@@ -787,7 +810,7 @@
 
 
                 .number {
-                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+                    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 73%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;

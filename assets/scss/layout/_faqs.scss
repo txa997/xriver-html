@@ -384,13 +384,24 @@
                 background-color: transparent;
                 .item-title {
                     opacity: 1;
-    
+                    font-size: 20px;
+                    letter-spacing: 0;
+                    padding: 19px 24px;
+
                     .text {
                         font-family: var(--xr-font-3);
                         color: var(--xr-clr-sd-3);
                         opacity: 1;
                         font-weight: 600;
                         margin-bottom: -4px;
+                    }
+                }
+
+                .item-disc {
+                    padding-left: 25px;
+
+                    @media #{$xs} {
+                        padding-left: 0px;
                     }
                 }
     

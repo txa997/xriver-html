@@ -970,6 +970,7 @@ if ($('.xr_client2_slider').length) {
 		slidesPerView: 6,
 		spaceBetween: 30,
 		loop: true,
+		speed: 1000,
 		autoplay: { delay: 4000 },
 		
 		navigation: {
@@ -1028,6 +1029,32 @@ if($(".xr-projects-2-gallery").length) {
 	}
 	
 	setInterval(autoRotate, 3000);
+}
+
+
+// projects-2-scroll-animation
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+	let p2scrollAnimation = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-projects-2-top-inner",
+			start: "top 80%",
+			end: "top 20%",
+			scrub: true,
+			markers: false,
+		}
+	});
+	
+	p2scrollAnimation.from(".xr-projects-2-top-inner .elm-box:nth-of-type(1)", {
+		x: 215,
+	})
+	p2scrollAnimation.from(".xr-projects-2-top-inner .elm-box:nth-of-type(2)", {
+		scale: 0,
+	},"<")
+	p2scrollAnimation.from(".xr-projects-2-top-inner .elm-box:nth-of-type(3)", {
+		x: -215,
+	},"<")
+
+	
 }
 
 
@@ -1234,6 +1261,24 @@ if($(".wa_hover_class_toggle").length) {
     });
 };
 
+if ($(".wa_hover_class_toggle_2").length) {
+    const wa_hover_class2 = document.querySelectorAll(".wa_hover_class_toggle_2");
+    const defaultActive2 = document.querySelector(".wa_hover_class_toggle_2.active");
+
+    wa_hover_class2.forEach(card => {
+        card.addEventListener("mouseenter", function () {
+            wa_hover_class2.forEach(c => c.classList.remove("active"));
+            this.classList.add("active");
+        });
+
+        card.addEventListener("mouseleave", function () {
+            wa_hover_class2.forEach(c => c.classList.remove("active"));
+            if (defaultActive2) {
+                defaultActive2.classList.add("active");
+            }
+        });
+    });
+}
 
 /* 
     marquee-activation

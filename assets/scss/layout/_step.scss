@@ -373,7 +373,7 @@
         }
         
 
-        &:hover {
+        &:is(.active) {
             z-index: 2;
             .card-img {
                 opacity: 1;
