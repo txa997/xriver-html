@@ -553,6 +553,14 @@
                 font-weight: 500;
                 letter-spacing: -4%;
                 padding: 13px 20px;
+
+                @media #{$xs} {
+                    display: none;
+                }
+
+                @media #{$sm} {
+                    display: inline-flex;
+                }
             }
         }
     }
@@ -628,6 +636,7 @@
                     border: none;
                     background: transparent;
                     padding-top: 10px;
+
                     li {
                         padding: 0 30px;
 
@@ -648,6 +657,10 @@
 
                         &:hover {
                             background-color: transparent;
+                        }
+
+                        .dropdown-menu {
+                            padding-top: 0;
                         }
                     }
                     
