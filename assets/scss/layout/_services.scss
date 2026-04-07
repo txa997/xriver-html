@@ -691,6 +691,30 @@
 
         }
     }
+
+    &-btn-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &-hire-btn {
+        .text {
+            background: #212121;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            color: var(--xr-clr-sd-3);
+        }
+
+        &:hover {
+            .text {
+                background-color: var(--xr-clr-sd-3);
+                border-color: transparent;
+                color: var(--xr-clr-pr-3);
+            }
+        }
+    }
 }
 /* 
     services-2-end

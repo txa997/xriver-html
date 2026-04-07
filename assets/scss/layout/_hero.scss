@@ -949,3 +949,17 @@
 /* 
     hero-2-end
 */
+
+/* 
+    hero-3-start
+*/
+.xr-hero-3 {
+    &-bg-img {
+        img {
+            filter: blur(51px);
+        }
+    }
+}
+/* 
+    hero-3-end
+*/

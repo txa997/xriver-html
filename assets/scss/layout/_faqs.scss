@@ -395,10 +395,28 @@
                         font-weight: 600;
                         margin-bottom: -4px;
                     }
+
+                    .icon {
+                        background: rgba(255, 255, 255, 16%);
+                        color: #fff;
+
+                        i {
+                            margin-top: 1px;
+                        }
+                    }
+
+
+                    &:is(:not(.collapsed)) {
+                        .icon {
+                            background: var(--xr-clr-pr-2);
+                            color: #000;
+                        }
+        
+                    }
                 }
 
                 .item-disc {
-                    padding-left: 25px;
+                    padding-left: 28px;
 
                     @media #{$xs} {
                         padding-left: 0px;

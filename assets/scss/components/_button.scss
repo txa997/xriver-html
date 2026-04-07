@@ -40,7 +40,14 @@
 }
 
 
-
+.xr-offcanvas-btn-3 {
+    background: var(--xr-clr-gd-3);
+    width: 68px;
+    height: 44px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 20px;
+}
 
 .xr-pr-btn-1 {
     font-family: var(--xr-font-2);
@@ -228,6 +235,41 @@
     }
 
 }
+
+
+.xr-pr-btn-3 {
+    font-family: var(--xr-font-4);
+    background: var(
+    --xr-clr-gd-3);
+    line-height: 1;
+    display: inline-flex;
+    gap: 12px;
+    padding: 8px;
+    padding-left: 26px;
+    border-radius: 100px;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(214.38deg, #FFFFFF 13.42%, #F2D2FF 66.14%, #434FE3 107.53%);
+        border-radius: 50%;
+
+        i {
+            background: var(--xr-clr-gd-3);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    
+}
+
 
 /* 
     button-end
