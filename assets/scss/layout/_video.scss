@@ -80,3 +80,21 @@
 /* 
     video-2-end
 */
+/* 
+    video-3-start
+*/
+.xr-video-3 {
+    &-area {
+        position: relative;
+        z-index: 1;
+    }
+    &-elm {
+        width: 100%;
+        height: 100vh;
+        mask-size: 100% 100%;
+        mask-position: center center;
+    }
+}
+/* 
+    video-3-end
+*/

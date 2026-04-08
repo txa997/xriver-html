@@ -112,6 +112,78 @@
 }
 
 
+.xr-subtitle-3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+
+    &-number {
+        font-family: var(--xr-font-2);
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        background-color: rgb(255 255 255 / 20%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    &-line {
+        height: 1px;
+        width: 76px;
+        background: #fff;
+        border-radius: 30px;
+        opacity: 32%;
+    }
+
+    &-text {
+        font-family: var(--xr-font-2);
+        color: #fff;
+        background: radial-gradient(136.29% 136.29% at 50% 50%, #000000 0%, #054ECF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 100px;
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -2%;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 20px;
+
+        .dot-elm {
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(239 49 191 / 22%);
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: var(--xr-clr-pr-3);
+                z-index: 1;
+                border-radius: 50%;
+                animation: wa-fade-in-out 3s linear infinite forwards;
+            }
+        }
+        
+    }
+}
+
+
+
 .xr-sec-title-1 {
     font-family: var(--xr-font-2);
     font-weight: 700;
@@ -184,7 +256,39 @@
     }
 }
 
+.xr-sec-title-3 {
+    font-family: var(--xr-font-4);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -2%;
+    font-size: 72px;
+    line-height: 1.055;
+    margin-bottom: 0;
 
+    @media #{$xxl} {
+        font-size: 60px;
+    }
+
+    @media #{$xl} {
+        font-size: 55px;
+    }
+
+    @media #{$lg} {
+        font-size: 50px;
+    }
+
+    @media #{$md} {
+        font-size: 45px;
+    }
+
+    @media #{$xs} {
+        font-size: 35px;
+    }
+
+    @media #{$sm} {
+        font-size: 40px;
+    }
+}
 /* 
     typography-end
 */

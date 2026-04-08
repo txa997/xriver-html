@@ -65,3 +65,34 @@
 /* 
     marquee-text-1-end
 */
+
+/* 
+    marquee-text-2-start
+*/
+.xr-marquee-text-3 {
+    &-area {
+        background: var(--xr-clr-gd-3);
+        padding-top: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 63%, 0 63%);
+        margin-bottom: -46px;
+    }
+
+    &-wrap {
+        display: flex;
+        gap: 72px;
+        margin-right: 72px;
+
+        .text-elm {
+            font-size: 100px;
+            flex: 0 0 auto;
+
+            @media #{$xs} {
+                font-size: 60px;
+            }
+        }
+    }
+}
+
+/* 
+    marquee-text-2-end
+*/
