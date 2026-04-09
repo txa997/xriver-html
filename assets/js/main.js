@@ -1330,9 +1330,9 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 		  scrollTrigger: {
 			trigger: ".xr-showcase-3-area",
 			start: "top 50%",
+			// end: "bottom bottom",
 			// scrub: true,
 			markers: false,
-
 
 			onComplete: () => {
 				$(".xr-showcase-3-wrap").addClass("active");
@@ -1373,8 +1373,69 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 		});
 	}
   
-  
 }
+
+/* 
+	about-1-features-slider-active
+*/
+if ($('.xr-about-3-features-title-slider').length) {
+
+	var xr_about_3_features = new Swiper(".xr-about-3-features-title-slider", {
+		grabCursor: true,
+		effect: "creative",
+		slidesPerView: "auto",
+		creativeEffect: {
+			// prev: {
+			// 	shadow: false,
+			// 	translate: ["0%", 0, -1],
+			// },
+			next: {
+				shadow: false,
+				translate: ["35%", 0, 0],
+			},
+			limitProgress: 2,
+		},
+
+
+	});
+
+
+}
+
+
+if ($('.xr-about-3-features-title-slider').length) {
+
+	var kk_a1f_content_slider_active = new Swiper(".xr-about-3-features-content-slider", {
+		slidesPerView: 1,
+		speed: 500,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
+
+	});
+	var kk_a1f_slider_active = new Swiper(".xr-about-3-features-title-slider", {
+		effect: "creative",
+		slidesPerView: "auto",
+		creativeEffect: {
+			next: {
+				shadow: false,
+				translate: ["29%", 0, 0],
+			},
+			limitProgress: 3,
+		},
+
+		thumbs: {
+			swiper: kk_a1f_content_slider_active,
+		},
+
+	});
+
+}
+
+
+
+
 
 
 if($(".wa_hover_class_toggle").length) {

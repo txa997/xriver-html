@@ -265,6 +265,11 @@
     line-height: 1.055;
     margin-bottom: 0;
 
+    span {
+        opacity: 40%;
+        display: inline;
+    }
+
     @media #{$xxl} {
         font-size: 60px;
     }
