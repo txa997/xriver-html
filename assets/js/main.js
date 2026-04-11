@@ -1402,7 +1402,7 @@ if ($('.xr-about-3-features-title-slider').length) {
 
 }
 
-
+// about-3-slider
 if ($('.xr-about-3-features-title-slider').length) {
 
 	var kk_a1f_content_slider_active = new Swiper(".xr-about-3-features-content-slider", {
@@ -1434,7 +1434,41 @@ if ($('.xr-about-3-features-title-slider').length) {
 }
 
 
+// projects-3-animation
+if (window.matchMedia("(min-width: 1200px)").matches) {
+	if($(".xr-projects-3-height").length) {
+		function initStackCards() {
 
+			const area = document.querySelector('.xr-projects-3-height');
+			const cards = gsap.utils.toArray('.xr-projects-3-card-single');
+
+			area.style.height = `${cards.length }00vh`;
+		
+			cards.forEach((card, index) => {
+				card.style.zIndex =  index;
+			});
+
+			let projects3tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".xr-projects-3-height",
+					start: "top top", 
+					end: "bottom bottom",
+					toggleActions: "play none none reverse",
+					scrub: true,
+					markers: false,
+				},
+			});
+			projects3tl.from(cards.slice(1), { 
+				rotate: 90,
+				stagger: 1,
+			});
+
+		}
+		
+		window.addEventListener('load', initStackCards);
+		window.addEventListener('resize', initStackCards);
+	}
+}
 
 
 

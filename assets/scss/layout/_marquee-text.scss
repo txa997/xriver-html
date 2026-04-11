@@ -96,3 +96,24 @@
 /* 
     marquee-text-2-end
 */
+
+/* 
+    marquee-text-3-start
+*/
+.xr-marquee-text-4-area {
+    padding: 36px 0;
+    
+    .xr-marquee-text-1-wrap-2 {
+        position: unset;
+        transform: rotate(-2deg);
+    }
+
+    .xr-marquee-text-1-elm .single-elm {
+        font-size: 40px;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+    }
+}
+/* 
+    marquee-text-3-end
+*/

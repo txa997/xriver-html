@@ -360,3 +360,41 @@
 /* 
     contact-2-end
 */
+
+/* 
+    contact-3-start
+*/
+.xr-contact-3 {
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 12px;
+
+
+        @media #{$over} {
+            margin-left: -164px;
+            margin-right: -164px;
+        }
+
+        .xr-contact-1 {
+            &-right {
+                border-radius: 16px;
+
+                &-content {
+                    .subtitle {
+                        margin-bottom: 26px;
+                    }
+
+                    .title {
+                        font-size: 44px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+/* 
+    contact-3-end
+*/
