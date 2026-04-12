@@ -227,6 +227,14 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px 16px;
 
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+
 
         &-label {
             background-color: #000;
@@ -370,11 +378,16 @@
         display: grid;
         grid-template-columns: 1fr 1.4fr;
         gap: 12px;
+        align-items: start;
 
 
         @media #{$over} {
             margin-left: -164px;
             margin-right: -164px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
         }
 
         .xr-contact-1 {
@@ -388,11 +401,173 @@
 
                     .title {
                         font-size: 44px;
+
+                        @media #{$xxl,$xl,$lg,$md,$xs} {
+                            font-size: 30px;
+                        }
                     }
                 }
             }
         }
         
+    }
+
+
+    
+    
+    
+    &-tl-slider {
+
+        &-img {
+            height: 726px;
+            border-radius: 12px;
+            overflow: hidden;
+
+            &-single {
+                height: 100%;
+            }
+
+
+            .swiper-slide {
+                height: 100%;
+            }
+        }
+        &-card {
+            &-single {
+                background-color: #000;
+                overflow: hidden;
+                border-radius: 16px;
+                padding: 2px;
+
+                .card-top {
+                    background-color: rgb(255 255 255 / 10%);
+                    border-radius: 12px;
+                    padding: 20px 22px;
+                }
+
+                .rating-icon {
+                    color: #FDAD00;
+                    font-size: 18px;
+                    margin-bottom: 6px;
+                }
+
+                .comment {
+                    font-size: 20px;
+                    letter-spacing: -2%;
+                }
+
+                .card-author-x-icon {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 12px 20px;
+                }
+                
+                .card-author {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &-img {
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                    }
+
+                    &-bio {
+                        font-size: 15px;
+                    }
+
+                    &-name {
+                        font-size: 18px;
+                        letter-spacing: -2%;
+                    }
+                    
+                }
+                
+            
+            
+
+                .icon-elm {
+                    background: var(--xr-clr-gd-3);
+                    line-height: 1;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 32px;
+                }
+                
+            }
+        }
+    }
+
+
+
+}
+
+
+.xr-contact-3 {
+    &-right {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+
+    &-slider-main {
+        position: absolute;
+        right: 190px;
+        bottom: 96px;
+        z-index: 1;
+
+        @media #{$xl,$lg,$md} {
+            right:  40px;
+            bottom: 40px;  
+        }
+
+        @media #{$xs} {
+            right:  0px;
+            bottom: 10px;  
+            width: 100%;
+        }
+
+        @media #{$sm} {
+            right:  40px;
+            bottom: 40px;  
+            width: auto;
+        }
+
+
+        &-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+
+            @media #{$xs} {
+                display: none;
+            }
+
+            @media #{$sm} {
+                display: block;
+            }
+
+            img {
+                transform: scale(5);
+                transform-origin: 50.3% 59.3%;
+            }
+        }
+    }
+
+
+    &-tl-slider-card {
+        max-width: 418px;
+        width: 100%;
+        overflow: hidden;
     }
 }
 /* 

@@ -533,26 +533,7 @@
             grid-template-columns: 1fr;
         }
 
-        .xr-subtitle-3 {
-            &-number {
-                background-color: #fff;
-                color: #000;
-            }
-
-            &-line {
-                background-color: #000;
-            }
-
-            &-text {
-                background: radial-gradient(136.29% 136.29% at 50% 50%, #ECECEC 0%, #054ECF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-                color: #000;
-            }
-            
-        }
-
-        .xr-sec-title-3 {
-            color: #000;
-        }
+        
     }
 
     &-wrap {

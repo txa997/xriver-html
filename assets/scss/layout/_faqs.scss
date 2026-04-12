@@ -435,3 +435,220 @@
 /* 
     faqs-2-end
 */
+
+/* 
+    faqs-3-start
+*/
+.xr-faqs-3 {
+    &-sec-title {
+        display: grid;
+        grid-template-columns: 1fr 1.67fr;
+        align-items: start;
+
+        @media #{$md,$xs} {
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
+        .xr-sec-title-3 {
+            max-width: 600px;
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.67fr;
+        align-items: start;
+
+        @media #{$lg} {
+            gap: 50px;
+        }
+
+        @media #{$md,$xs} {
+            gap: 50px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    &-card {
+        max-width: 380px;
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #fff;
+        padding: 12px;
+
+
+        .img-elm {
+            height: 330px;
+            border-radius: 10px;
+        }
+
+        .card-text {
+            color: rgb(0 0 0 / 80%);
+            padding: 10px 12px;
+            margin-bottom: 8px;
+
+            a {
+                color: #000;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-right {
+        .xr-accordion {
+            gap: 10px;
+            &-item {
+                background-color: #fff;
+                .item-title {
+                    color: #000;
+                    font-family: var(--xr-font-2);
+                    font-weight: 500;
+                    font-size: 20px;
+                    padding: 21px 30px;
+                    padding-right: 20px;
+
+                    .icon {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 6px;
+                        background-color: #000;
+                        color: #ffff;
+                    }
+
+                    &:is(:not(.collapsed)) {
+                        .icon {
+                            background: #2754E9;
+                        }
+        
+                    }
+                }
+
+                
+                .content {
+                    &-wrap {
+                        margin-left: 30px;
+                        display: flex;
+                        gap: 40px;
+                        align-items: start;
+                        padding-bottom: 40px;
+
+                        @media #{$xs} {
+                            flex-wrap: wrap;
+                        }
+
+                        @media #{$sm} {
+                            flex-wrap: nowrap;
+                        }
+
+                        &-right {
+                            .item-disc {
+                                color: #000;
+                                max-width: 630px;
+                                margin: 0;
+                                margin-bottom: 20px;
+                                padding: 0;
+                            }
+
+
+                            .xr-pr-btn-3 {
+                                padding: 4px;
+                                padding-left: 22px;
+                                background: #000;
+                                .icon {
+                                    width: 36px;
+                                    height: 36px;
+                                    background: #fff;
+
+                                    i {
+                                        -webkit-text-fill-color: #000;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    
+
+                    &-img {
+                        max-width: 160px;
+                        width: 100%;
+                        position: relative;
+                        z-index: 1;
+
+                        &-single {
+                            max-width: 131px;
+                            width: 100%;
+                            border-radius: 6px;
+                        }
+
+
+                        &-shape-1 {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0px;
+                            background: rgba(0, 0, 0, 0.07);
+                            backdrop-filter: blur(3px);
+                            border-radius: 6px;
+                            transform: matrix(1, 0.00, 0.00, 1, 0, 0);
+                            width: 85%;
+                            height: 100%;
+                            z-index: -1;
+                            transition: .5s var(--xr-cube-1);
+                        }
+
+                        &-shape-2 {
+                            background: rgba(0, 0, 0, 0.07);
+                            backdrop-filter: blur(3px);
+                            border-radius: 6px;
+                            transform: matrix(1, 0.00, -0.0, 1, 0, 0);
+                            position: absolute;
+                            bottom: 0px;
+                            left: 0px;
+                            width: 85%;
+                            height: 100%;
+                            z-index: -2;
+                            transition: .5s var(--xr-cube-1);
+                        }
+                    }
+                }
+                
+                
+                &:is(.active) {
+                    .content {
+                        &-img {
+
+    
+                            &-shape-1 {
+                                bottom: 0;
+                                left: 5px;
+                                transform: matrix(1, 0.05, -0.05, 1, 0, 0);
+                            }
+    
+                            &-shape-2 {
+                                transform: matrix(0.99, 0.1, -0.1, 0.99, 0, 0);
+                                bottom: -6px;
+                                left: 15px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+
+    &-marquee-shape {
+        display: flex;
+        .single-shape {
+            flex: 0 0 auto;
+        }
+    }
+    
+}
+
+/* 
+    faqs-3-end
+*/

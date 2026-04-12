@@ -1375,32 +1375,6 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
   
 }
 
-/* 
-	about-1-features-slider-active
-*/
-if ($('.xr-about-3-features-title-slider').length) {
-
-	var xr_about_3_features = new Swiper(".xr-about-3-features-title-slider", {
-		grabCursor: true,
-		effect: "creative",
-		slidesPerView: "auto",
-		creativeEffect: {
-			// prev: {
-			// 	shadow: false,
-			// 	translate: ["0%", 0, -1],
-			// },
-			next: {
-				shadow: false,
-				translate: ["35%", 0, 0],
-			},
-			limitProgress: 2,
-		},
-
-
-	});
-
-
-}
 
 // about-3-slider
 if ($('.xr-about-3-features-title-slider').length) {
@@ -1469,6 +1443,77 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 		window.addEventListener('resize', initStackCards);
 	}
 }
+
+// contact-3-testimonial
+if (window.matchMedia("(min-width: 1400px)").matches) { 
+
+	if ($(".xr-contact-3-right").length) {
+
+		const wrapper = document.querySelector(".xr-contact-3-right");
+		const movingDiv = document.querySelector(".xr-contact-3-slider-main");
+	
+		wrapper.addEventListener("mousemove", (e) => {
+	
+			const rect = wrapper.getBoundingClientRect();
+	
+			const xPercent = (e.clientX - rect.left) / rect.width - 0.6;
+			const yPercent = (e.clientY - rect.top) / rect.height - 0.5;
+	
+			const moveX = xPercent * 800; 
+			const moveY = yPercent * 550;
+	
+			gsap.to(movingDiv, {
+				x: moveX,
+				y: moveY,
+				duration: 0.4,
+				ease: "power2.out"
+			});
+	
+		});
+	
+		wrapper.addEventListener("mouseleave", () => {
+			gsap.to(movingDiv, {
+				x: 0,
+				y: 0,
+				duration: 0.7,
+				ease: "power3.out"
+			});
+		});
+	
+	}
+}
+
+
+// contact-3-testimonial-slider
+if ($('.xr_c3_slider_img').length) {
+
+	var xr_c3_slider_img = new Swiper(".xr_c3_slider_img", {
+		loop: true,
+		slidesPerView: 1,
+		speed: 500,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
+
+
+
+	});
+	var xr_c3_slider_card = new Swiper(".xr_c3_slider_card", {
+		loop: true,
+		speed: 800,
+		thumbs: {
+			swiper: xr_c3_slider_img,
+		},
+		autoplay: { delay: 3000 },
+	});
+
+}
+
+
+
+
+
 
 
 
