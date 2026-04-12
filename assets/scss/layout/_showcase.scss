@@ -278,15 +278,20 @@
 
 
 
+.xr-showcase-3-wrap {
 
+    &.active {
 
+        .xr-showcase-3-img {
+            transition: .4s;
+        
+            &.hovered {
+                transform: scale(.9) !important;
+            }
+        }
 
-
-
-
-
-
-  
+    }
+}
   
 /* 
     showcase-3-end

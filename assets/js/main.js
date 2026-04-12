@@ -152,8 +152,8 @@ $(document).on('keydown', function(event) {
 window.addEventListener('load', function(){
 
 
-	if (document.querySelectorAll(".sk-loader").length) {
-		const loader = document.querySelector(".sk-loader");
+	if (document.querySelectorAll(".xr-preloader").length) {
+		const loader = document.querySelector(".xr-preloader");
 		
 		setTimeout(() => {
 			loader.classList.add("loaded");
@@ -378,56 +378,7 @@ function afterPreloader() {
 	}	
 
 
-/* 
-	after-preloader-end
-*/
-}
-
-
-
-
-
-
-/* 
-	after-page-load-start
-*/
-function afterPageLoad() {
-
-	/* 
-		add-active-class
-	*/
-	const waAddClass = gsap.utils.toArray('.wa_add_class');
-	waAddClass.forEach(waAddClassItem => {
-		gsap.to(waAddClassItem, {
-			scrollTrigger: {
-				trigger: waAddClassItem,
-				start: "top 90%",
-				end: "bottom bottom",
-				toggleActions: "play none none reverse",
-				toggleClass: "active",
-				once: true,
-				markers: false,
-			}
-		});
-	});
-
-
-
-	/* 
-		wow-activation
-	*/
-	if($('.wow').length){
-		var wow = new WOW({
-			boxClass:     'wow',
-			animateClass: 'animated',
-			offset:       50,
-			mobile:       true,
-			live:         true
-		});
-		wow.init();
-	};
-
-
+	
 
 	// hero-1-features-list
 	if($(".xr-hero-1-features-list").length) {
@@ -522,20 +473,23 @@ function afterPageLoad() {
 
 		const xr_h3_preview_slider = new Swiper('.xr_h3_preview_slider', {
 			loop: true,
-			speed: 700,
+			speed: 1000,
 			slidesPerView: 3,
 			direction: 'vertical',
 			spaceBetween: 5,
+	
 
 		});
 
 
 		let as_h3_main_slider = new Swiper('.as_h3_main_slider', {
-			speed: 700,
+			loop: true,
+			speed: 1000,
 			effect: "fade",
 			fadeEffect: {
 				crossFade: true
 			},
+			autoplay: { delay: 4000 },
 			thumbs: {
 				swiper: xr_h3_preview_slider,
 			},
@@ -543,9 +497,67 @@ function afterPageLoad() {
 	
 	}
 	
-
+	// hero-3-tl
+	let hero3tl1 = gsap.timeline()
+	hero3tl1.from(".xr-video-3-elm", {
+		yPercent: 50,
+		autoAlpha: 0,
+		duration: 1,
+		ease: "expo.out",
+		delay: 1.4,
+	})
 
 	
+/* 
+	after-preloader-end
+*/
+}
+
+
+
+
+
+
+/* 
+	after-page-load-start
+*/
+function afterPageLoad() {
+
+	/* 
+		add-active-class
+	*/
+	const waAddClass = gsap.utils.toArray('.wa_add_class');
+	waAddClass.forEach(waAddClassItem => {
+		gsap.to(waAddClassItem, {
+			scrollTrigger: {
+				trigger: waAddClassItem,
+				start: "top 90%",
+				end: "bottom bottom",
+				toggleActions: "play none none reverse",
+				toggleClass: "active",
+				once: true,
+				markers: false,
+			}
+		});
+	});
+
+
+
+	/* 
+		wow-activation
+	*/
+	if($('.wow').length){
+		var wow = new WOW({
+			boxClass:     'wow',
+			animateClass: 'animated',
+			offset:       50,
+			mobile:       true,
+			live:         true
+		});
+		wow.init();
+	};
+
+
 
 
 		
@@ -1307,6 +1319,28 @@ if (window.matchMedia("(max-width: 1919px) and (min-width: 1600px)").matches) {
 }
 
 
+
+
+
+
+
+if (document.querySelector(".xr-video-3-area")) {
+    const videoSection = document.querySelector(".xr-video-3-area");
+    const video = videoSection.querySelector("video");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    }, {
+        threshold: 0.3 
+    });
+    observer.observe(videoSection);
+}
+
 // showcase-3-animation
 if (window.matchMedia("(min-width: 1200px)").matches) {
 	if($(".xr-showcase-3-img-single").length) {
@@ -1329,15 +1363,13 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 		const s3imgLt = gsap.timeline({
 		  scrollTrigger: {
 			trigger: ".xr-showcase-3-area",
-			start: "top 50%",
-			// end: "bottom bottom",
-			// scrub: true,
+			start: "top 40%",
 			markers: false,
+		  },
 
-			onComplete: () => {
-				$(".xr-showcase-3-wrap").addClass("active");
+		  onComplete: () => {
+			$(".xr-showcase-3-wrap").addClass("active");
 			}
-		  }
 		});
 	  
 		s3imgLt.from(".xr-showcase-3-img", {
@@ -1370,6 +1402,19 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 	
 		s3imgLt2.to(".xr-showcase-3-img-wrap", {
 			rotation: -180,
+		});
+
+
+
+		const wrap = document.querySelector(".xr-showcase-3-img");
+		const content = document.querySelector(".xr-showcase-3-content");
+
+		content.addEventListener("mouseenter", () => {
+			wrap.classList.add("hovered");
+		});
+
+		content.addEventListener("mouseleave", () => {
+			wrap.classList.remove("hovered");
 		});
 	}
   
