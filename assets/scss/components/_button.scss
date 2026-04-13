@@ -239,8 +239,7 @@
 
 .xr-pr-btn-3 {
     font-family: var(--xr-font-4);
-    background: var(
-    --xr-clr-gd-3);
+    background: var(--xr-clr-gd-3);
     line-height: 1;
     display: inline-flex;
     gap: 12px;
@@ -251,6 +250,10 @@
     color: #fff;
     font-size: 16px;
     font-weight: 800;
+    perspective: 2000px;
+    position: relative;
+    z-index: 1;
+    transition: .4s var(--xr-cube-2);
 
     .icon {
         width: 40px;
@@ -260,11 +263,39 @@
         justify-content: center;
         background: linear-gradient(214.38deg, #FFFFFF 13.42%, #F2D2FF 66.14%, #434FE3 107.53%);
         border-radius: 50%;
+        transition: .4s var(--xr-cube-2);
 
         i {
             background: var(--xr-clr-gd-3);
             background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 80%;
+        height: 100%;
+        background-color: var(--xr-clr-pr-3);
+        inset: 0;
+        position: absolute;
+        border-radius: 100px;
+        z-index: -1;
+        transform: rotateX(91deg);
+        transform-origin: bottom;
+        margin: 0 auto;
+        transition: .4s var(--xr-cube-2);
+
+    }
+
+    &:hover {
+        color: #fff;
+        &::after {
+            transform: rotateX(0deg);
+            width: 100%;
+        }
+        .icon {
+            transform: rotate(-45deg);
         }
     }
     

@@ -54,6 +54,19 @@
         color: var(--sk-clr-pr-2);
     }
 
+    &:is(.has-home-3) {
+        background: var(--xr-clr-gd-3);
+
+        &:hover {
+            svg {
+                * {
+                    fill: var(--xr-clr-pr-3);
+                }
+            }
+        }
+
+    }
+
 
 }
 

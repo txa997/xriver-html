@@ -213,6 +213,7 @@ function afterPreloader() {
 						toggleActions: "play none none none",
 						start: "top 86%",
 						once: true,
+						markers: false,
 					},
 					duration: 0.35,
 					stagger: 0.02,
@@ -1451,6 +1452,21 @@ if ($('.xr-about-3-features-title-slider').length) {
 	});
 
 }
+
+if (window.matchMedia("(min-width: 1400px)").matches) { 
+	let about3tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".xr-about-3-area",
+			start: "top 90%", 
+			end: "top top",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	about3tl.from(".xr-about-3-img-3", { x: 200, y: -900, rotate: 40, });
+}
+
 
 
 // projects-3-animation

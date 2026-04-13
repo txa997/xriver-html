@@ -87,6 +87,31 @@
     }
 
     
+    &:is(.has-home-2) {
+        .xr-preloader-text {
+            span {
+                &:nth-child(1) {
+                    color: var(--xr-clr-pr-2);
+                }
+            }
+        }
+        .xr-preloader-line {
+            background: var(--xr-clr-pr-2);
+        }
+    }
+    
+    &:is(.has-home-3) {
+        .xr-preloader-text {
+            span {
+                &:nth-child(1) {
+                    color: var(--xr-clr-pr-3);
+                }
+            }
+        }
+        .xr-preloader-line {
+            background: var(--xr-clr-gd-3);
+        }
+    }
 }
 
 

@@ -1132,9 +1132,14 @@
         padding-top: 157px;
         padding-bottom: 255px;
 
-        @media #{$md,$xs} {
+        @media #{$md} {
             padding-top: 150px;
 
+        }
+
+        @media #{$xs} {
+            padding-top: 150px;
+            padding-bottom: 395px;
         }
 
         &-img {
@@ -1301,6 +1306,11 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        transition: .4s var(--xr-cube-2);
+
+        &:hover {
+            background-color: var(--xr-clr-pr-3);
+        }
     }
     
     &-social {

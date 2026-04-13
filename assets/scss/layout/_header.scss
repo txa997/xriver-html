@@ -639,6 +639,7 @@
 
                     li {
                         padding: 0 30px;
+                        background-color: #3B4451;
 
                         &::after {
                             display: block;
@@ -656,7 +657,7 @@
                         }
 
                         &:hover {
-                            background-color: transparent;
+                            background-color: #3B4451;
                         }
 
                         .dropdown-menu {

@@ -430,6 +430,20 @@
         top: 2%;
         left: 0;
         z-index: -1;
+        perspective: 2000px;
+        transform-style: preserve-3d;
+        overflow: hidden;
+
+        img {
+            transform: rotateZ(40deg) translateX(-100%);
+            transition: 3s var(--xr-cube-2);
+        }
+
+        &:is(.active) {
+            img {
+                transform: rotateZ(0deg) translateX(0%);
+            }
+        }
     }
     
     &-hand-2 {
@@ -438,6 +452,21 @@
         right: 0;
         top: 2%;
         z-index: -1;
+
+        perspective: 2000px;
+        transform-style: preserve-3d;
+        overflow: hidden;
+
+        img {
+            transform: rotateZ(-40deg) translateX(100%);
+            transition: 3s var(--xr-cube-2);
+        }
+
+        &:is(.active) {
+            img {
+                transform: rotateZ(0deg) translateX(0%);
+            }
+        }
     }
     
     &-glow {

@@ -367,9 +367,14 @@
             font-family: var(--xr-font-2);
             letter-spacing: -2%;
             margin-bottom: 14px;
+            transition: var(--xr-cube-1);
 
             @media #{$xl,$lg,$md,$xs} {
                 font-size: 22px;
+            }
+
+            &:hover {
+                color: var(--xr-clr-pr-3);
             }
         }
 
