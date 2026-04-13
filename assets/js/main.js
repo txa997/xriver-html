@@ -490,7 +490,7 @@ function afterPreloader() {
 			fadeEffect: {
 				crossFade: true
 			},
-			autoplay: { delay: 4000 },
+			autoplay: { delay: 6000 },
 			thumbs: {
 				swiper: xr_h3_preview_slider,
 			},

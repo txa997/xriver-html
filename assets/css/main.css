@@ -1253,7 +1253,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-family: var(--xr-font-2);
   color: #fff;
   background: radial-gradient(136.29% 136.29% at 50% 50%, #000000 0%, #054ECF 100%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
   margin-bottom: 0;
   font-size: 16px;
@@ -3311,7 +3310,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-family: var(--xr-font-2);
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: -4%;
+  letter-spacing: -2%;
   padding: 8.5px 0;
 }
 .xr-main-navigation:is(.xr-header-3-menu) .navbar-nav li:is(.dropdown) > a {
@@ -4344,9 +4343,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 100%;
   z-index: -1;
 }
-.xr-hero-3-bg-img img {
-  filter: blur(51px);
-}
 .xr-hero-3-title-text {
   font-size: 340px;
   font-weight: 800;
@@ -4516,11 +4512,18 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-hero-3-item-img {
   text-align: right;
   position: absolute;
-  right: -104px;
-  bottom: -13px;
-  width: 55%;
+  right: 0;
+  bottom: 0;
+  width: 49%;
   z-index: 1;
   pointer-events: none;
+  height: 102%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.xr-hero-3-item-img img {
+  width: 100%;
 }
 .xr-hero-3-item-card-x-btn {
   position: absolute;
@@ -4558,6 +4561,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: relative;
   z-index: 1;
   transition: 0.5s var(--xr-cube-2);
+  overflow: hidden;
 }
 .xr-hero-3-btn .bg-clr {
   width: 30px;
@@ -4666,7 +4670,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   align-items: center;
   gap: 14px;
   margin-top: 40px;
-  margin-bottom: 15px;
+  margin-bottom: 90px;
 }
 .xr-hero-3-social .title {
   writing-mode: sideways-lr;
@@ -5335,7 +5339,45 @@ input:focus::placeholder, textarea:focus::placeholder {
   left: -31%;
   z-index: 1;
 }
+.xr-about-3-img-3 img {
+  animation: about3imgKf 30s linear infinite;
+}
 
+@keyframes about3imgKf {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(15px, -10px) rotate(5deg);
+  }
+  20% {
+    transform: translate(-10px, 15px) rotate(-6deg);
+  }
+  30% {
+    transform: translate(20px, 5px) rotate(8deg);
+  }
+  40% {
+    transform: translate(-15px, -15px) rotate(-5deg);
+  }
+  50% {
+    transform: translate(10px, 20px) rotate(6deg);
+  }
+  60% {
+    transform: translate(-20px, 10px) rotate(-8deg);
+  }
+  70% {
+    transform: translate(15px, -15px) rotate(5deg);
+  }
+  80% {
+    transform: translate(-10px, 20px) rotate(-6deg);
+  }
+  90% {
+    transform: translate(10px, -10px) rotate(4deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
 .xr-about-3-features-single {
   background-color: #fff;
   border-radius: 12px;
