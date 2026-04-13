@@ -5351,25 +5351,25 @@ input:focus::placeholder, textarea:focus::placeholder {
     transform: translate(15px, -10px) rotate(5deg);
   }
   20% {
-    transform: translate(-10px, 15px) rotate(-6deg);
+    transform: translate(-10px, 15px) rotate(-2deg);
   }
   30% {
     transform: translate(20px, 5px) rotate(8deg);
   }
   40% {
-    transform: translate(-15px, -15px) rotate(-5deg);
+    transform: translate(-15px, -15px) rotate(-1deg);
   }
   50% {
     transform: translate(10px, 20px) rotate(6deg);
   }
   60% {
-    transform: translate(-20px, 10px) rotate(-8deg);
+    transform: translate(-20px, 10px) rotate(-3deg);
   }
   70% {
     transform: translate(15px, -15px) rotate(5deg);
   }
   80% {
-    transform: translate(-10px, 20px) rotate(-6deg);
+    transform: translate(-10px, 20px) rotate(-2deg);
   }
   90% {
     transform: translate(10px, -10px) rotate(4deg);
@@ -6740,6 +6740,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-marquee-text-4-area .xr-marquee-text-1-wrap-2 {
   position: unset;
   transform: rotate(-2deg);
+  padding: 29px 0;
 }
 .xr-marquee-text-4-area .xr-marquee-text-1-elm .single-elm {
   font-size: 40px;
@@ -8679,7 +8680,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 */
 .xr-projects-3-area {
   background-color: #000;
-  margin-top: -72px;
+  margin-top: -92px;
 }
 .xr-projects-3-sec-title {
   display: flex;
@@ -9660,7 +9661,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .xr-step-3-hand-1 {
   width: 27%;
   position: absolute;
-  top: 2%;
+  top: 6%;
   left: 0;
   z-index: -1;
   perspective: 2000px;
@@ -9678,7 +9679,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   width: 27%;
   position: absolute;
   right: 0;
-  top: 2%;
+  top: 6%;
   z-index: -1;
   perspective: 2000px;
   transform-style: preserve-3d;
@@ -9697,6 +9698,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   right: 0;
   bottom: 0;
   z-index: -1;
+  text-align: right;
 }
 .xr-step-3-sec-title {
   display: flex;
@@ -9767,8 +9769,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  position: relative;
-  z-index: 1;
 }
 .xr-step-3-card-single .card-top {
   background: #191919;
@@ -9837,32 +9837,27 @@ input:focus::placeholder, textarea:focus::placeholder {
   transform: translateY(0px);
 }
 
-.xr-step-3-card-single {
-  position: sticky;
-  top: 0;
-}
-@media (max-width: 767px) {
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .xr-step-3-wrap {
+    height: 100vh;
+  }
+  .xr-step-3-card {
+    position: relative;
+    z-index: 1;
+  }
   .xr-step-3-card-single {
-    position: unset;
+    will-change: transform, opacity, filter;
+  }
+  .xr-step-3-card-single:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .xr-step-3-pin {
+    position: sticky;
+    top: 0;
   }
 }
-
-.xr-step-3-card-single:nth-child(1) {
-  top: 100px;
-}
-
-.xr-step-3-card-single:nth-child(2) {
-  top: 200px;
-}
-
-.xr-step-3-card-single:nth-child(3) {
-  top: 300px;
-}
-
-.xr-step-3-card-single:nth-child(4) {
-  top: 400px;
-}
-
 /* 
     step-3-end
 */

@@ -1291,6 +1291,43 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
 }
 
 
+// home-3-subtitle
+if ($(".xr-subtitle-3").length) {
+    gsap.utils.toArray(".xr-subtitle-3").forEach((item) => {
+        const line = item.querySelector(".xr-subtitle-3-line");
+        const text = item.querySelector(".xr-subtitle-3-text");
+
+        gsap.set(line, {
+            scaleX: 0,
+            transformOrigin: "left center"
+        });
+        gsap.set(text, {
+            x: -90,
+        });
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+            }
+        })
+        .to(line, {
+            scaleX: 1,
+            duration: 1,
+            ease: "power2.out"
+        })
+        .to(text, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out"
+        }, "<");
+
+    });
+
+}
+
 // video-3-animation
 if (window.matchMedia("(min-width: 1920px)").matches) { 
 	let video3tl = gsap.timeline({
@@ -1320,11 +1357,7 @@ if (window.matchMedia("(max-width: 1919px) and (min-width: 1600px)").matches) {
 }
 
 
-
-
-
-
-
+// video-3-play-pause
 if (document.querySelector(".xr-video-3-area")) {
     const videoSection = document.querySelector(".xr-video-3-area");
     const video = videoSection.querySelector("video");
@@ -1500,10 +1533,61 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 
 		}
 		
-		window.addEventListener('load', initStackCards);
-		window.addEventListener('resize', initStackCards);
+		initStackCards();
 	}
 }
+
+
+// step-3-animation
+if (window.matchMedia("(min-width: 1200px)").matches) {
+	if ($(".xr-step-3-area").length) {
+
+		const cards = gsap.utils.toArray(".xr-step-3-card-single");
+		const area = document.querySelector(".xr-step-3-area");
+		area.style.height = `${cards.length * 100 - 100}vh`;
+
+		gsap.set(cards, { 
+			yPercent: 100,
+			autoAlpha: 0
+		});
+
+		gsap.set(cards[0], { 
+			yPercent: 0,
+			autoAlpha: 1
+		});
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: area,
+				start: "top top",
+				end: "bottom bottom",
+				scrub: true,
+			}
+		});
+
+		cards.forEach((card, i) => {
+
+			if (i === 0) return;
+
+			tl.to(card, {
+				yPercent: 0,
+				autoAlpha: 1,
+				duration: 1
+			})
+
+			.to(cards[i - 1], {
+				scale: 0.8,
+				filter: "blur(6px)",
+				autoAlpha: 0,
+				duration: 1
+			}, "<10%"); 
+		});
+
+	}
+
+}
+
+
 
 // contact-3-testimonial
 if (window.matchMedia("(min-width: 1400px)").matches) { 

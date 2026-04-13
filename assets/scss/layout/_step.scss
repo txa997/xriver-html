@@ -427,7 +427,7 @@
     &-hand-1 {
         width: 27%;
         position: absolute;
-        top: 2%;
+        top: 6%;
         left: 0;
         z-index: -1;
         perspective: 2000px;
@@ -450,7 +450,7 @@
         width: 27%;
         position: absolute;
         right: 0;
-        top: 2%;
+        top: 6%;
         z-index: -1;
 
         perspective: 2000px;
@@ -475,6 +475,7 @@
         right: 0;
         bottom: 0;
         z-index: -1;
+        text-align: right;
     }
 
 
@@ -553,8 +554,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        position: relative;
-        z-index: 1;
+
         
 
         &-single {
@@ -638,33 +638,38 @@
     
 }
 
-
-.xr-step-3 {
-    &-card-single {
-        position: sticky;
-        top: 0;
-
-        @media #{$xs} {
-            position: unset;
+@media #{$over,$xxxl,$xxl,$xl} {
+    .xr-step-3 {
+        &-wrap {
+            height: 100vh;
         }
+
+        &-card {
+            position: relative;
+            z-index: 1;
+
+            &-single {
+                will-change: transform, opacity, filter;
+                
+                &:not(:first-child) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+
+        &-pin {
+            position: sticky;
+            top: 0;
+        }
+
     }
+
 }
 
-.xr-step-3-card-single:nth-child(1) {
-    top: 100px;
-}
 
-.xr-step-3-card-single:nth-child(2) {
-    top: 200px;
-}
-
-.xr-step-3-card-single:nth-child(3) {
-    top: 300px;
-}
-
-.xr-step-3-card-single:nth-child(4) {
-    top: 400px;
-}
 /* 
     step-3-end
 */
