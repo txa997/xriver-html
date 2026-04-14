@@ -102,6 +102,8 @@
 */
 .xr-marquee-text-4-area {
     padding: 36px 0;
+    position: relative;
+    z-index: 2;
     
     .xr-marquee-text-1-wrap-2 {
         position: unset;

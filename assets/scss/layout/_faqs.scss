@@ -559,11 +559,18 @@
                                 .icon {
                                     width: 36px;
                                     height: 36px;
-                                    background: #fff;
 
                                     i {
                                         -webkit-text-fill-color: #000;
                                     }
+                                }
+
+                                &::after {
+                                    width: 36px;
+                                    height: 36px;
+                                    background: #fff;
+                                    top: 4px;
+                                    right: 4px;
                                 }
 
                             }

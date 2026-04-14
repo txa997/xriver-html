@@ -561,6 +561,10 @@
                 @media #{$sm} {
                     display: inline-flex;
                 }
+
+                &::after {
+                    display: none;
+                }
             }
         }
     }

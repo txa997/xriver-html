@@ -50,8 +50,20 @@
 
 
     &:is(.has-home-2) {
-        border-color: var(--sk-clr-pr-2);
-        color: var(--sk-clr-pr-2);
+        background: var(--xr-clr-pr-2);
+
+        svg {
+            * {
+                fill: #000;
+            }
+        }
+        &:hover {
+            svg {
+                * {
+                    fill: var(--xr-clr-pr-2);
+                }
+            }
+        }
     }
 
     &:is(.has-home-3) {

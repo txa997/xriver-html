@@ -870,10 +870,13 @@
                     .xr-pr-btn-3 {
                         background: #000;
                         .icon {
-                            background: var(--xr-clr-gd-3);
                             i {
                                 -webkit-text-fill-color: #fff;
                             }
+                        }
+
+                        &::after {
+                            background: var(--xr-clr-gd-3);
                         }
                     }
                 }

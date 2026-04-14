@@ -280,14 +280,20 @@
             color: #000;
 
             .icon {
-                background: linear-gradient(214.38deg, #000000 13.42%, #000000 44.64%, #434FE3 94.86%);
+           
                 
                 i {
                     -webkit-text-fill-color: #fff;
                 }
             }
 
+
+            &::after {
+                background: linear-gradient(214.38deg, #000000 13.42%, #000000 44.64%, #434FE3 94.86%);
+            }
+
             &:hover {
+                background: var(--xr-clr-pr-3);
                 color: #fff;
                 border-color: transparent;
             }

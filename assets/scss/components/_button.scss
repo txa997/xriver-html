@@ -239,7 +239,7 @@
 
 .xr-pr-btn-3 {
     font-family: var(--xr-font-4);
-    background: var(--xr-clr-gd-3);
+    background: linear-gradient(135deg, #EF31BF 0%, #594CDE 24.52%, #EF31BF 51.44%, #594CDE 75.48%, #EF31BF 100%);
     line-height: 1;
     display: inline-flex;
     gap: 12px;
@@ -255,16 +255,18 @@
     z-index: 1;
     transition: .4s var(--xr-cube-2);
 
+    background-size: 300% 300%;
+    animation: waveGradient 6s ease-in-out infinite;
+    overflow: hidden;
+
     .icon {
         width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(214.38deg, #FFFFFF 13.42%, #F2D2FF 66.14%, #434FE3 107.53%);
         border-radius: 50%;
         transition: .4s var(--xr-cube-2);
-
         i {
             background: var(--xr-clr-gd-3);
             background-clip: text;
@@ -274,29 +276,25 @@
 
     &::after {
         content: "";
-        width: 80%;
-        height: 100%;
-        background-color: var(--xr-clr-pr-3);
-        inset: 0;
         position: absolute;
-        border-radius: 100px;
+        right: 8px;
+        top: 8px;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(214.38deg, #FFFFFF 13.42%, #F2D2FF 66.14%, #434FE3 107.53%);
+        border-radius: 50%;
+        transition: .5s cubic-bezier(0.44, -0.37, 0.63, 1.45);
         z-index: -1;
-        transform: rotateX(91deg);
-        transform-origin: bottom;
-        margin: 0 auto;
-        transition: .4s var(--xr-cube-2);
-
+        transform-origin: left;
     }
 
     &:hover {
         color: #fff;
+        animation-play-state: paused;
         &::after {
-            transform: rotateX(0deg);
-            width: 100%;
+            transform: scale(1.5) ;
         }
-        .icon {
-            transform: rotate(-45deg);
-        }
+
     }
     
 }
